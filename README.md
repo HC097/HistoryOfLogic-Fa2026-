@@ -8,7 +8,7 @@ The notes are written primarily as **university lecture materials**, rather than
 
 The corresponding lecture videos are available here:
 
-[YouTube Playlist](https://www.youtube.com/playlist?list=PLCDyiPIAw4aU)
+[YouTube Playlist](https://www.youtube.com)
 
 ---
 
