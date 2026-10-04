@@ -1,0 +1,3603 @@
+\documentclass[11pt]{article}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+% ============================================================
+% FORMATTING
+% ============================================================
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+
+\setlist[itemize]{itemsep=0.3em, topsep=0.4em}
+\setlist[enumerate]{itemsep=0.3em, topsep=0.4em}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0}
+}
+
+% ============================================================
+% WHITEBOARD ENVIRONMENT
+% ============================================================
+
+\newtcolorbox{whiteboard}{
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=black,
+    boxrule=0.9pt,
+    sharp corners,
+    title=\textbf{WHITEBOARD},
+    fonttitle=\bfseries,
+    attach boxed title to top left={
+        xshift=0.4cm,
+        yshift=-2mm
+    },
+    boxed title style={
+        colback=white,
+        colframe=black,
+        sharp corners
+    },
+    before skip=1em,
+    after skip=1em
+}
+
+\newcommand{\boardtakeaway}[1]{
+    \begin{center}
+    \fbox{
+        \parbox{0.88\linewidth}{
+            \centering
+            \textbf{#1}
+        }
+    }
+    \end{center}
+}
+
+% Modern teaching notation for exclusive disjunction.
+% This is not Stoic notation.
+\newcommand{\xor}{\mathbin{\mathrm{XOR}}}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{The Megarians and the Stoics}}\\[0.4em]
+    {\large From Dialectical Paradox to Propositional Logic}\\[0.8em]
+    \textit{History of Logic}\\[0.5em]
+    \textbf{Primary source:} William and Martha Kneale,
+    \textit{The Development of Logic}, Chapter III,
+    ``The Megarians and the Stoics.''
+\end{center}
+
+\vspace{1em}
+
+% ============================================================
+% INTRODUCTION
+% ============================================================
+
+\section{Two Great Traditions of Ancient Logic}
+
+The preceding chapter concentrated upon Aristotle.
+
+Aristotle's mature formal theory grew chiefly out of reflection
+upon reasoning involving general terms. Geometry and the ideal of
+demonstration provided an especially important model.
+
+But Aristotle's was not the only great logical tradition of the
+ancient world.
+
+Later antiquity distinguished two major schools:
+
+\begin{enumerate}
+    \item the \textbf{Peripatetic} tradition deriving from Aristotle;
+    \item the \textbf{Stoic} tradition, developed especially by
+    Chrysippus from Megarian logical work.
+\end{enumerate}
+
+The difference between the two traditions is not simply a
+difference of doctrine.
+
+They begin from different kinds of argumentative practice and
+therefore isolate different kinds of logical structure.
+
+\begin{whiteboard}
+\textbf{TWO GREAT ANCIENT TRADITIONS}
+
+\[
+\begin{array}{ccc}
+\textbf{PERIPATETIC}
+&&
+\textbf{MEGARIAN--STOIC}
+\\[0.4em]
+\text{Aristotle}
+&&
+\text{Megarians}
+\\
+\downarrow
+&&
+\downarrow
+\\
+\text{term / syllogistic logic}
+&&
+\text{Chrysippus}
+\\
+&&
+\downarrow
+\\
+&&
+\text{propositional / dialectical logic}
+\end{array}
+\]
+
+\boardtakeaway{Independent traditions, but ultimately complementary.}
+\end{whiteboard}
+
+Unfortunately, the writings of the great Stoic logicians have
+not survived intact.
+
+Our knowledge comes primarily from later reports, often written
+by people who belonged to rival philosophical schools.
+
+We can reconstruct the major features of Stoic logic, but the
+evidence is sometimes incomplete or uncertain.
+
+% ============================================================
+\section{Geometry and Dialectic: Two Sources of Logic}
+% ============================================================
+
+The contrast between Aristotle and the Megarians can be traced
+back to the kinds of reasoning upon which they concentrated.
+
+Aristotle appears to have been strongly influenced by
+demonstrative reasoning of the sort found in mathematics.
+
+The Megarians, by contrast, inherited traditions associated with:
+
+\begin{itemize}
+    \item Eleatic philosophy;
+    \item Zeno's dialectical arguments;
+    \item reductio;
+    \item eristic disputation;
+    \item paradox;
+    \item conditional argument.
+\end{itemize}
+
+These different origins help explain why Aristotle and the Stoics
+developed such different formal systems.
+
+\begin{whiteboard}
+\textbf{TWO SOURCES $\rightarrow$ TWO LOGICS}
+
+\[
+\begin{array}{ccc}
+\textbf{GEOMETRY}
+&&
+\textbf{DIALECTIC}
+\\
+\downarrow
+&&
+\downarrow
+\\
+\text{Aristotle}
+&&
+\text{Megarians / Stoics}
+\\
+\downarrow
+&&
+\downarrow
+\\
+\text{general terms}
+&&
+\text{whole propositions}
+\\
+\text{syllogisms}
+&&
+\text{connectives / inference}
+\end{array}
+\]
+
+\boardtakeaway{Different argumentative practices reveal different logical structures.}
+\end{whiteboard}
+
+This contrast will organize the entire lecture.
+
+% ============================================================
+% PART I
+% ============================================================
+
+\part*{I. The Megarian Tradition and Its Paradoxes}
+
+% ============================================================
+\section{From Euclides to Chrysippus}
+% ============================================================
+
+Euclides of Megara, an older contemporary of Plato, is
+traditionally regarded as the founder of the Megarian school.
+
+The line of influence is not perfectly recoverable, but several
+figures are especially important.
+
+Eubulides became famous for paradoxes.
+
+Diodorus Cronus and Philo developed theories of modality and
+conditionals.
+
+Stilpo belonged to the Megarian tradition and taught Zeno of
+Citium, the founder of Stoicism.
+
+Chrysippus, the third major head of the Stoic school, eventually
+gave Stoic dialectic its most systematic form.
+
+\begin{whiteboard}
+\textbf{MEGARIAN $\rightarrow$ STOIC LINE}
+
+\[
+\begin{array}{c}
+\text{Euclides of Megara}\\
+\downarrow\\
+\text{Eubulides / Megarian tradition}\\
+\downarrow\\
+\text{Diodorus Cronus + Philo}\\
+\downarrow\\
+\text{Zeno of Citium}\\
+\downarrow\\
+\boxed{\text{Chrysippus}}
+\end{array}
+\]
+
+\[
+\text{Chrysippus}
+=
+\text{great systematizer of Stoic logic}
+\]
+\end{whiteboard}
+
+Ancient admiration for Chrysippus as a dialectician was
+extraordinary.
+
+His logical work was regarded as a rival to Aristotle's system,
+not merely as a minor supplement to it.
+
+% ============================================================
+\section{Eubulides and the Logical Use of Paradox}
+% ============================================================
+
+Eubulides was traditionally credited with several paradoxes.
+
+The Kneales reduce the traditional list to four principal types:
+
+\begin{enumerate}
+    \item the Liar;
+    \item the Hooded Man, also called the Unnoticed Man or Electra;
+    \item the Bald Man or Heap;
+    \item the Horned Man.
+\end{enumerate}
+
+These puzzles are important because each exposes a genuine
+logical or philosophical problem.
+
+They should not be dismissed as mere verbal games.
+
+\begin{whiteboard}
+\textbf{EUBULIDES: FOUR PARADOXES}
+
+\[
+\begin{array}{ll}
+1. & \text{Liar}\\
+2. & \text{Hooded Man / Electra}\\
+3. & \text{Bald Man / Heap}\\
+4. & \text{Horned Man}
+\end{array}
+\]
+
+\boardtakeaway{Paradox becomes a tool for discovering logical problems.}
+\end{whiteboard}
+
+% ============================================================
+\section{The Liar}
+% ============================================================
+
+The Liar concerns a statement that turns upon its own truth or
+falsity.
+
+A modernized compact form is:
+
+\begin{center}
+``This statement is false.''
+\end{center}
+
+Suppose the statement is true.
+
+Then what it says is the case, and therefore it is false.
+
+But suppose it is false.
+
+Then what it says is not the case, which seems to make it true.
+
+\begin{whiteboard}
+\textbf{THE LIAR}
+
+\[
+\text{``This statement is false.''}
+\]
+
+If TRUE:
+
+\[
+\text{what it says} \Rightarrow \text{FALSE}
+\]
+
+If FALSE:
+
+\[
+\text{what it says appears} \Rightarrow \text{TRUE}
+\]
+
+\[
+\boxed{\text{Problem: SELF-REFERENCE + TRUTH}}
+\]
+\end{whiteboard}
+
+The purpose of this lecture is not to solve the Liar.
+
+Its historical importance lies in the fact that Megarian
+dialecticians had isolated a profound difficulty involving
+self-reference and the predicates ``true'' and ``false.''
+
+% ============================================================
+\section{The Hooded Man}
+% ============================================================
+
+The Hooded Man raises a different problem.
+
+Suppose you know your brother.
+
+A hooded person enters.
+
+Unknown to you, the hooded person is your brother.
+
+You do not recognize the hooded person.
+
+Must we therefore say both:
+
+\begin{center}
+you know your brother
+\end{center}
+
+and:
+
+\begin{center}
+you do not know your brother?
+\end{center}
+
+The puzzle concerns the interaction of identity with contexts
+involving knowledge.
+
+\begin{whiteboard}
+\textbf{HOODED MAN}
+
+Suppose:
+
+\[
+X=Y
+\]
+
+Question:
+
+\[
+\text{Can everything said truly of }X
+\text{ be substituted for }Y?
+\]
+
+\vspace{0.4em}
+
+\boardtakeaway{Identity alone may not preserve truth in knowledge-contexts.}
+\end{whiteboard}
+
+The Kneales also note that the puzzle forces us to distinguish
+different uses of the word ``know.''
+
+We need not yet develop a full theory of such contexts.
+
+The important point is that simple substitution of identical
+objects can become problematic when the proposition also
+describes someone's knowledge.
+
+% ============================================================
+\section{The Heap and the Bald Man}
+% ============================================================
+
+The Heap and the Bald Man are versions of what later came to be
+called the sorites paradox.
+
+Suppose a man with only one hair is bald.
+
+Would two hairs make him non-bald?
+
+Three?
+
+Four?
+
+At what precise point does the change occur?
+
+The heap version asks the corresponding question about grains
+of material.
+
+\begin{whiteboard}
+\textbf{THE HEAP / BALD MAN}
+
+\[
+1\text{ hair} \rightarrow \text{bald?}
+\]
+
+\[
+2\text{ hairs} \rightarrow \text{bald?}
+\]
+
+\[
+3\text{ hairs} \rightarrow \text{bald?}
+\]
+
+\[
+\vdots
+\]
+
+\[
+\boxed{\text{WHERE IS THE BOUNDARY?}}
+\]
+
+\[
+\text{Problem: VAGUE PREDICATES}
+\]
+\end{whiteboard}
+
+The paradox reveals that many ordinary predicates do not possess
+sharp boundaries of application.
+
+% ============================================================
+\section{The Horned Man}
+% ============================================================
+
+The Horned Man takes the form:
+
+\begin{center}
+What you have not lost, you still have.
+\end{center}
+
+\begin{center}
+You have not lost horns.
+\end{center}
+
+Therefore:
+
+\begin{center}
+You still have horns.
+\end{center}
+
+The argument is fallacious, but the interesting question is why.
+
+The Kneales interpret the difficulty in terms of
+\textbf{presupposition}.
+
+The statement:
+
+\begin{center}
+``You have lost your horns''
+\end{center}
+
+normally presupposes that you once had horns.
+
+But a denial can operate in more than one way.
+
+It may reject only the explicit claim that you lost them while
+leaving the presupposition intact, or it may reject the entire
+complex claim.
+
+\begin{whiteboard}
+\textbf{HORNED MAN}
+
+\[
+\text{What you have not lost, you have.}
+\]
+
+\[
+\text{You have not lost horns.}
+\]
+
+\[
+\therefore
+\text{You have horns.}
+\]
+
+\vspace{0.5em}
+
+Hidden issue:
+
+\[
+\text{``You lost horns''}
+\]
+
+presupposes:
+
+\[
+\text{``You once had horns.''}
+\]
+
+\boardtakeaway{Negation may reject more than the explicit predicate.}
+\end{whiteboard}
+
+% ============================================================
+\section{What the Four Paradoxes Reveal}
+% ============================================================
+
+The puzzles attributed to Eubulides anticipate four enormous
+areas of later logical inquiry.
+
+\begin{whiteboard}
+\textbf{PARADOX $\rightarrow$ LOGICAL PROBLEM}
+
+\[
+\begin{array}{rcl}
+\text{Liar}
+&\rightarrow&
+\text{truth / self-reference}
+\\[0.4em]
+\text{Hooded Man}
+&\rightarrow&
+\text{identity / knowledge}
+\\[0.4em]
+\text{Heap}
+&\rightarrow&
+\text{vagueness}
+\\[0.4em]
+\text{Horned Man}
+&\rightarrow&
+\text{presupposition / negation}
+\end{array}
+\]
+\end{whiteboard}
+
+Whatever role entertainment and controversy played in Megarian
+practice, the intellectual content of these puzzles is serious.
+
+% ============================================================
+\section{A Historical Mistake: Rivalry Instead of Combination}
+% ============================================================
+
+The Megarian and Stoic schools became involved in a long rivalry
+with the Peripatetic tradition.
+
+The Kneales regard this as unfortunate.
+
+Aristotelian and Stoic logic are not naturally alternatives.
+
+They study different dimensions of logical structure.
+
+\begin{whiteboard}
+\textbf{ANCIENT POLEMIC}
+
+\[
+\text{Aristotle}
+\quad\mathbf{VS.}\quad
+\text{Stoics}
+\]
+
+\[
+\text{Better picture:}
+\]
+
+\[
+\boxed{
+\text{Aristotle}
++
+\text{Stoics}
+}
+\]
+
+\[
+\text{TERM LOGIC}
++
+\text{PROPOSITIONAL LOGIC}
+\]
+\end{whiteboard}
+
+The failure to integrate these two achievements will become one
+of the chapter's central historical conclusions.
+
+% ============================================================
+% PART II
+% ============================================================
+
+\part*{II. Megarian and Stoic Theories of Modality}
+
+% ============================================================
+\section{The Problem of Possibility}
+% ============================================================
+
+Aristotle reports that some Megarians denied a genuine
+distinction between actuality and potentiality.
+
+Such a doctrine fits naturally with an Eleatic suspicion of
+motion and change.
+
+Yet later Megarians devoted substantial attention to modal
+notions such as:
+
+\begin{itemize}
+    \item possible;
+    \item impossible;
+    \item necessary;
+    \item non-necessary.
+\end{itemize}
+
+The question becomes:
+
+\begin{center}
+Can modality be explained without Aristotle's theory of real
+potentiality?
+\end{center}
+
+\begin{whiteboard}
+\textbf{THE MODAL QUESTION}
+
+What do we mean by:
+
+\[
+\begin{array}{c}
+\text{POSSIBLE}\\
+\text{IMPOSSIBLE}\\
+\text{NECESSARY}\\
+\text{NON-NECESSARY}
+\end{array}
+\]
+
+\[
+\boxed{\text{Diodorus} \neq \text{Philo} \neq \text{later Stoics}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Diodorus Cronus: Modal Definitions}
+% ============================================================
+
+Diodorus offers the most striking of the Megarian modal
+theories.
+
+He defines modality through the truth or falsity of a statement
+across time.
+
+Using \(P\) as a neutral placeholder for the relevant statement:
+
+\begin{whiteboard}
+\textbf{DIODORUS}
+
+\[
+\boxed{
+\text{Possible }P
+=
+P\text{ is true or will be true}
+}
+\]
+
+\[
+\boxed{
+\text{Impossible }P
+=
+P\text{ is false and will never be true}
+}
+\]
+
+\[
+\boxed{
+\text{Necessary }P
+=
+P\text{ is true and will never be false}
+}
+\]
+
+\[
+\boxed{
+\text{Non-necessary }P
+=
+P\text{ is false or will be false}
+}
+\]
+\end{whiteboard}
+
+The modal predicates are thus tied directly to patterns of truth
+through time.
+
+% ============================================================
+\section{Diodoran Modality Is Modality-at-a-Time}
+% ============================================================
+
+The Kneales emphasize that Diodorus is not defining necessity
+simply and timelessly.
+
+He is effectively defining \textbf{necessity-at-a-time}.
+
+Suppose a statement is now true and will never again become
+false.
+
+It is now necessary according to Diodorus.
+
+But before the relevant event occurred, the corresponding
+statement may merely have been possible.
+
+Thus modality can change.
+
+\begin{whiteboard}
+\textbf{DIODORAN MODALITY}
+
+\[
+\text{modality depends upon truth through TIME}
+\]
+
+Possible changes:
+
+\[
+\text{possible}
+\rightarrow
+\text{necessary}
+\]
+
+\[
+\text{possible}
+\rightarrow
+\text{impossible}
+\]
+
+But once reached:
+
+\[
+\text{necessary}
+\rightarrow
+\text{stays necessary}
+\]
+
+\[
+\text{impossible}
+\rightarrow
+\text{stays impossible}
+\]
+\end{whiteboard}
+
+The theory is closely connected with Diodorus' famous
+\textbf{Master Argument}.
+
+% ============================================================
+\section{The Master Argument}
+% ============================================================
+
+The Master Argument is known chiefly through later reports.
+
+It begins with three propositions which Diodorus claims are
+mutually incompatible.
+
+\begin{enumerate}
+    \item Everything that is past and true is necessary.
+    \item The impossible does not follow from the possible.
+    \item Something which neither is nor will be true may
+    nevertheless be possible.
+\end{enumerate}
+
+Diodorus accepts the first two and rejects the third.
+
+Hence he identifies the possible with what either is or will be
+true.
+
+\begin{whiteboard}
+\textbf{THE MASTER ARGUMENT}
+
+Three claims cannot all stand:
+
+\[
+\begin{array}{ll}
+1. & \text{Past truth } \rightarrow \text{ necessary}\\[0.4em]
+2. & \text{Impossible cannot follow from possible}\\[0.4em]
+3. & \text{Something may be possible}\\
+   & \text{although it never occurs}
+\end{array}
+\]
+
+Diodorus:
+
+\[
+\text{accept }1+2
+\]
+
+\[
+\text{reject }3
+\]
+
+Therefore:
+
+\[
+\boxed{
+\text{Possible}
+=
+\text{what is or will be true}
+}
+\]
+\end{whiteboard}
+
+This conclusion was naturally associated in antiquity with
+determinism or fatalism.
+
+% ============================================================
+\section{Why the Master Argument Seems Plausible}
+% ============================================================
+
+The first premise gains much of its force from a familiar thought:
+
+\begin{center}
+What has happened cannot now be made not to have happened.
+\end{center}
+
+Even Aristotle remarks that deliberation concerns the future,
+not the already completed past.
+
+But a distinction is required.
+
+The past may now be \textbf{unalterable} without thereby having
+been \textbf{absolutely necessary} before it occurred.
+
+\begin{whiteboard}
+\textbf{WHY PREMISE 1 TEMPTS US}
+
+\[
+\text{What has happened}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{cannot now be changed}
+\]
+
+Temptation:
+
+\[
+\text{cannot now be changed}
+\Rightarrow
+\text{was absolutely necessary}
+\]
+
+But:
+
+\[
+\boxed{
+\text{UNALTERABILITY}
+\neq
+\text{ABSOLUTE NECESSITY}
+}
+\]
+\end{whiteboard}
+
+This is closely related to the distinction between relative and
+absolute necessity encountered in Aristotle.
+
+% ============================================================
+\section{The Ambiguity in the Master Argument}
+% ============================================================
+
+The Kneales identify a crucial ambiguity.
+
+We must distinguish:
+
+\begin{enumerate}
+    \item a statement \textbf{about the past};
+    \item a statement grammatically \textbf{in the past tense}.
+\end{enumerate}
+
+These are not equivalent.
+
+A sentence can be in the past tense while its interpretation
+depends upon the present context of utterance.
+
+Likewise, a sentence with a different tense can make a claim
+about an event already past.
+
+\begin{whiteboard}
+\textbf{CRUCIAL DISTINCTION}
+
+\[
+\boxed{
+\text{statement ABOUT the past}
+\neq
+\text{statement IN the past tense}
+}
+\]
+
+Underlying problem:
+
+\[
+\boxed{
+\text{sentence}
+\neq
+\text{what the sentence expresses}
+}
+\]
+\end{whiteboard}
+
+The Kneales argue that the Master Argument trades upon this
+ambiguity.
+
+The problem resembles one already encountered in Aristotle's
+discussion of future contingents.
+
+Both theories suffer from insufficiently sharp separation of
+sentences from the propositions or contents expressed by them.
+
+% ============================================================
+\section{Philo's Alternative Theory of Possibility}
+% ============================================================
+
+Philo rejects Diodorus' restriction of possibility to what does or
+will actually occur.
+
+For Philo, something can be possible in virtue of the intrinsic
+character of the subject even when external conditions prevent
+its realization.
+
+The ancient example concerns wood at the bottom of the sea.
+
+The wood remains the sort of thing that can burn even though
+its present surroundings prevent it from burning.
+
+\begin{whiteboard}
+\textbf{PHILO}
+
+\[
+\boxed{
+\text{Possible}
+=
+\text{admits of truth by its intrinsic nature}
+}
+\]
+
+Example:
+
+\[
+\text{wood under the sea}
+\]
+
+\[
+\text{intrinsically burnable}
+\]
+
+but:
+
+\[
+\text{external circumstances prevent burning}
+\]
+
+\boardtakeaway{Possible $\neq$ what actually happens.}
+\end{whiteboard}
+
+The Kneales interpret Philo as making possibility the basic modal
+notion and associating it approximately with intrinsic
+consistency or admissibility.
+
+% ============================================================
+\section{The Later Stoic Variant}
+% ============================================================
+
+Later reports attribute to the Stoics a more complicated theory.
+
+The evidence is compressed and does not permit complete
+certainty.
+
+But the important distinction appears to be between:
+
+\begin{enumerate}
+    \item what something intrinsically admits;
+    \item what external circumstances allow or prevent.
+\end{enumerate}
+
+Thus modal status can involve both intrinsic and circumstantial
+features.
+
+\begin{whiteboard}
+\textbf{STOIC MODALITY}
+
+\[
+\boxed{
+\text{INTRINSIC ADMISSIBILITY}
++
+\text{EXTERNAL CIRCUMSTANCES}
+}
+\]
+
+Distinguish:
+
+\[
+\text{absolute modality}
+\]
+
+from
+
+\[
+\text{relative / circumstance-dependent modality}
+\]
+\end{whiteboard}
+
+Because our ancient evidence is fragmentary, this reconstruction
+must remain cautious.
+
+% ============================================================
+\section{Three Ancient Strategies for Modality}
+% ============================================================
+
+The differences can now be summarized.
+
+\begin{whiteboard}
+\textbf{THREE APPROACHES}
+
+\[
+\begin{array}{rcl}
+\textbf{Diodorus}
+&\rightarrow&
+\text{truth through time}
+\\[0.5em]
+\textbf{Philo}
+&\rightarrow&
+\text{intrinsic admissibility}
+\\[0.5em]
+\textbf{Stoics}
+&\rightarrow&
+\text{intrinsic admissibility}\\
+&&+\text{ external circumstances}
+\end{array}
+\]
+
+\boardtakeaway{Same modal vocabulary; different underlying theories.}
+\end{whiteboard}
+
+The modal debate prepares directly for another Megarian
+controversy: the nature of conditional statements.
+
+% ============================================================
+% PART III
+% ============================================================
+
+\part*{III. The Debate on the Nature of Conditionals}
+
+% ============================================================
+\section{Why Dialecticians Care About ``If''}
+% ============================================================
+
+Conditionals were not central to Aristotle's classification of
+propositions.
+
+For a thinker working in the tradition of Zeno, however,
+conditional reasoning is unavoidable.
+
+A typical refutation has the following shape:
+
+\[
+P\rightarrow Q,
+\]
+
+\[
+P\rightarrow \neg Q,
+\]
+
+therefore:
+
+\[
+\neg P.
+\]
+
+If arguments of this sort are fundamental to dialectical
+practice, the question immediately arises:
+
+\begin{center}
+What exactly does ``if \(P\), then \(Q\)'' mean?
+\end{center}
+
+\begin{whiteboard}
+\textbf{ZENONIAN DIALECTIC}
+
+\[
+P\rightarrow Q
+\]
+
+\[
+P\rightarrow\neg Q
+\]
+
+\[
+\therefore\neg P
+\]
+
+\vspace{0.5em}
+
+\[
+\boxed{\text{WHAT DOES }P\rightarrow Q\text{ MEAN?}}
+\]
+\end{whiteboard}
+
+The first extensive ancient debate over this problem appears
+among Diodorus, Philo, and later dialecticians.
+
+% ============================================================
+\section{Four Ancient Theories of the Conditional}
+% ============================================================
+
+Sextus Empiricus reports four views.
+
+The authorship of all four is not certain.
+
+Philo and Diodorus are securely identified with the first two.
+
+The third may well be associated with Chrysippus.
+
+\begin{whiteboard}
+\textbf{FOUR THEORIES OF ``IF \(P\), THEN \(Q\)''}
+
+\[
+\begin{array}{rl}
+1.\ \textbf{Philo:}
+&
+\text{not }(P\text{ true and }Q\text{ false})
+\\[0.5em]
+2.\ \textbf{Diodorus:}
+&
+\text{never could / can be}\\
+&
+P\text{ true and }Q\text{ false}
+\\[0.5em]
+3.\ \textbf{Connexion:}
+&
+P\text{ incompatible with }\neg Q
+\\[0.5em]
+4.\ \textbf{Implication:}
+&
+Q\text{ contained potentially in }P
+\end{array}
+\]
+\end{whiteboard}
+
+The disagreement concerns how strong a connexion must obtain
+between antecedent and consequent.
+
+% ============================================================
+\section{Philo's Truth-Functional Conditional}
+% ============================================================
+
+Philo gives the weakest of these theories.
+
+A conditional is false only when its antecedent is true and its
+consequent false.
+
+In every other combination of truth-values, the conditional is
+true.
+
+Using modern tabular notation:
+
+\begin{whiteboard}
+\textbf{PHILO'S CONDITIONAL}
+
+\[
+\begin{array}{c|c|c}
+P & Q & P\rightarrow Q\\
+\hline
+T & T & T\\
+T & F & F\\
+F & T & T\\
+F & F & T
+\end{array}
+\]
+
+\[
+\boxed{
+\text{Only false case: }
+P=T,\ Q=F
+}
+\]
+\end{whiteboard}
+
+The truth-table device itself is modern.
+
+The important historical fact is that the idea of
+\textbf{truth-functional dependence} is already clearly present.
+
+% ============================================================
+\section{Why Philo's Theory Makes Logical Sense}
+% ============================================================
+
+At first sight Philo's theory gives strange results.
+
+Why should:
+
+\[
+P\rightarrow Q
+\]
+
+be true merely because \(P\) is false?
+
+The Kneales suggest that Philo may have begun from a fundamental
+property required of conditional reasoning.
+
+Whatever else ``if \(P\), then \(Q\)'' means, it must license the
+following pattern:
+
+\begin{whiteboard}
+\textbf{MINIMUM REQUIREMENT FOR ``IF''}
+
+\[
+\begin{array}{c}
+P\rightarrow Q\\
+P\\
+\hline
+Q
+\end{array}
+\]
+
+\[
+\boxed{
+\text{Philo gives the weakest truth-condition}
+}
+\]
+
+\[
+\boxed{
+\text{that guarantees this inference.}
+}
+\]
+\end{whiteboard}
+
+This inference will later become the first of Chrysippus' five
+basic inference schemata.
+
+% ============================================================
+\section{Diodorus' Stronger Conditional}
+% ============================================================
+
+Diodorus rejects Philo's account as too weak.
+
+A conditional should not count as sound merely because its
+antecedent happens now to be false or its consequent happens now
+to be true.
+
+Diodorus therefore adds a temporal requirement.
+
+A sound conditional must never have been and never be capable
+of beginning with a truth and ending with a falsehood.
+
+\begin{whiteboard}
+\textbf{DIODORUS}
+
+\[
+P\rightarrow Q
+\]
+
+is sound only if:
+
+\[
+\boxed{
+\text{NEVER: }
+P=T
+\text{ and }
+Q=F
+}
+\]
+
+not merely:
+
+\[
+\text{not now}
+\]
+
+but:
+
+\[
+\text{across relevant times}
+\]
+
+\boardtakeaway{Diodorus strengthens Philo.}
+\end{whiteboard}
+
+This theory is closely tied to Diodorus' peculiar treatment of
+modality and temporal truth.
+
+It therefore inherits many of the difficulties of that theory.
+
+% ============================================================
+\section{The Theory of Connexion}
+% ============================================================
+
+The third reported theory says that a sound conditional must
+contain a stronger connexion.
+
+The negation of the consequent must be incompatible with the
+antecedent.
+
+Thus:
+
+\[
+P\rightarrow Q
+\]
+
+is sound when \(P\) cannot hold together with \(\neg Q\).
+
+\begin{whiteboard}
+\textbf{CONNEXION THEORY}
+
+\[
+P\rightarrow Q
+\]
+
+is sound iff:
+
+\[
+\boxed{
+P\text{ is incompatible with }\neg Q
+}
+\]
+
+That is:
+
+\[
+\text{not possible: }P\land\neg Q
+\]
+\end{whiteboard}
+
+The surviving evidence suggests that this may have been
+Chrysippus' characteristic position, but the attribution is not
+certain enough to state without qualification.
+
+% ============================================================
+\section{Conditionality and Entailment}
+% ============================================================
+
+The debate exposes an important distinction.
+
+If \(P\) logically entails \(Q\), then we may certainly form the
+true conditional:
+
+\[
+P\rightarrow Q.
+\]
+
+But the converse does not automatically hold.
+
+Not every conditional accepted as true in ordinary discourse is
+therefore an expression of logical entailment.
+
+\begin{whiteboard}
+\textbf{CONDITIONALITY VS. ENTAILMENT}
+
+\[
+P\models Q
+\]
+
+supports:
+
+\[
+P\rightarrow Q
+\]
+
+Therefore:
+
+\[
+\boxed{
+\text{ENTAILMENT}
+\Rightarrow
+\text{true conditional}
+}
+\]
+
+But:
+
+\[
+\boxed{
+\text{true conditional}
+\not\Rightarrow
+\text{logical entailment}
+}
+\]
+
+\boardtakeaway{CONDITIONALITY $\neq$ ENTAILMENT}
+\end{whiteboard}
+
+Much later confusion in logic resulted from attempts to identify
+all uses of ``if \ldots then \ldots'' with necessary logical
+connexion.
+
+% ============================================================
+\section{The Kneales on Primitive Conditional Speech}
+% ============================================================
+
+At this point the Kneales move from historical reconstruction to
+their own analysis of ordinary conditional speech.
+
+This should be distinguished clearly from the doctrines of Philo,
+Diodorus, or Chrysippus.
+
+Consider a promise:
+
+\begin{center}
+``I will do \(Q\) if \(P\) occurs.''
+\end{center}
+
+If \(P\) never occurs, we do not ordinarily say that the speaker
+has fulfilled the promise merely because the antecedent is false.
+
+Similarly, a conditional order does not count as obeyed simply
+because the relevant condition never occurs.
+
+The Kneales suggest that one primitive function of an
+``if''-clause is to select a possibility for attention.
+
+What occurs in the consequent is then said with respect to that
+possibility.
+
+\begin{whiteboard}
+\textbf{KNEALES: PRIMITIVE ``IF''}
+
+\[
+\text{If }P,\text{ then }Q
+\]
+
+Interpretation:
+
+\[
+P
+\rightarrow
+\text{selects a POSSIBILITY}
+\]
+
+\[
+Q
+\rightarrow
+\text{said with respect to that possibility}
+\]
+
+If \(P\) never occurs:
+
+\[
+\boxed{\text{the conditional may have NO APPLICATION}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{The Defective Truth-Function}
+% ============================================================
+
+On this analysis, a primitive conditional can be represented as
+a \textbf{defective truth-function}.
+
+When the antecedent is fulfilled, the truth or falsity of the
+consequent determines whether the conditional prediction was
+borne out.
+
+When the antecedent is false, the conditional may simply have no
+application.
+
+\begin{whiteboard}
+\textbf{DEFECTIVE TRUTH-FUNCTION}
+
+\[
+\begin{array}{c|c|c}
+P & Q & \text{If }P\text{ then }Q\\
+\hline
+T & T & T\\
+T & F & F\\
+F & T & -\\
+F & F & -
+\end{array}
+\]
+
+\[
+-\ =\ \text{no application}
+\]
+
+\[
+\boxed{\text{Not automatically bivalent.}}
+\]
+\end{whiteboard}
+
+Again, this is the Kneales' philosophical analysis, not an ancient
+Stoic truth-table.
+
+% ============================================================
+\section{Necessary-Connexion Conditionals}
+% ============================================================
+
+Other conditional statements do something stronger.
+
+The speaker may mean:
+
+\[
+P\text{ cannot occur without }Q.
+\]
+
+Such a claim is not established merely by discovering that \(P\)
+and \(Q\) happen both to be true.
+
+It asserts some modal connexion between them.
+
+\begin{whiteboard}
+\textbf{TWO IMPORTANT USES OF ``IF''}
+
+\[
+\begin{array}{rl}
+\textbf{Primitive:}
+&
+\text{If }P,\text{ expect }Q.
+\\[0.5em]
+\textbf{Modal:}
+&
+P\text{ cannot hold without }Q.
+\end{array}
+\]
+
+\[
+\boxed{
+\text{truth-value dependence}
+\neq
+\text{necessary connexion}
+}
+\]
+
+\boardtakeaway{No single simple rule captures every ordinary use of ``if.''}
+\end{whiteboard}
+
+The historical importance of the Megarian debate lies partly in
+the fact that ancient logicians already recognized the difficulty
+of explaining conditional connexion.
+
+% ============================================================
+% PART IV
+% ============================================================
+
+\part*{IV. Stoic Meaning, Truth, and the Lekton}
+
+% ============================================================
+\section{Logic as a Part of Philosophy}
+% ============================================================
+
+The Stoics gave logic a more explicit place in their philosophical
+system than any of their predecessors.
+
+Their standard division of philosophy was:
+
+\begin{enumerate}
+    \item physics;
+    \item ethics;
+    \item logic.
+\end{enumerate}
+
+The Peripatetics were later represented as treating logic mainly
+as an \textbf{instrument} of philosophy.
+
+The Stoics treated it as one of philosophy's constituent parts.
+
+\begin{whiteboard}
+\textbf{STOIC PHILOSOPHY}
+
+\[
+\boxed{
+\text{PHYSICS}
+\qquad
+\text{ETHICS}
+\qquad
+\text{LOGIC}
+}
+\]
+
+\vspace{0.5em}
+
+\[
+\begin{array}{rcl}
+\textbf{Stoics:}
+&\text{logic}=&
+\text{PART of philosophy}
+\\[0.4em]
+\textbf{Peripatetics:}
+&\text{logic}=&
+\text{INSTRUMENT of philosophy}
+\end{array}
+\]
+\end{whiteboard}
+
+Within logic, the Stoic term \textbf{dialectic} corresponds most
+closely to what we now call logic, though Stoic dialectic also
+includes material we would place under grammar, semantics, and
+epistemology.
+
+% ============================================================
+\section{Things Signifying and Things Signified}
+% ============================================================
+
+The Stoics divided dialectic into investigation of:
+
+\begin{itemize}
+    \item things that signify;
+    \item things that are signified.
+\end{itemize}
+
+They developed a remarkably sophisticated theory of linguistic
+meaning.
+
+The central distinction involves three items:
+
+\begin{enumerate}
+    \item the signifying expression;
+    \item what is signified or meant;
+    \item the external object.
+\end{enumerate}
+
+What is signified or meant is called a \textbf{lekton}.
+
+\begin{whiteboard}
+\textbf{STOIC SEMANTIC TRIAD}
+
+\[
+\begin{array}{c}
+\textbf{SIGNIFIER}\\
+\text{spoken expression}\\
+\downarrow\\
+\textbf{LEKTON}\\
+\text{what is meant / signified}\\
+\downarrow\\
+\textbf{OBJECT}\\
+\text{thing in the world}
+\end{array}
+\]
+\end{whiteboard}
+
+In Stoic metaphysics:
+
+\begin{itemize}
+    \item speech is corporeal;
+    \item the external object is corporeal;
+    \item the lekton is incorporeal.
+\end{itemize}
+
+\begin{whiteboard}
+\[
+\begin{array}{rcl}
+\text{speech}
+&=&
+\text{corporeal}
+\\[0.3em]
+\text{object}
+&=&
+\text{corporeal}
+\\[0.3em]
+\text{lekton}
+&=&
+\boxed{\text{INCORPOREAL}}
+\end{array}
+\]
+\end{whiteboard}
+
+This is striking because the Stoics were otherwise strongly
+materialist philosophers.
+
+% ============================================================
+\section{Why the Lekton Is Logically Important}
+% ============================================================
+
+The theory responds to a problem that has appeared repeatedly
+throughout our course.
+
+What exactly is true or false?
+
+A physical sound cannot by itself be the primary bearer of truth.
+
+Someone who does not understand Greek can hear a Greek
+sentence without understanding what it signifies.
+
+The Stoics therefore distinguish the expression from what the
+expression means.
+
+\begin{whiteboard}
+\textbf{OLD PROBLEM}
+
+What is TRUE or FALSE?
+
+Not merely:
+
+\[
+\text{sound}
+\]
+
+Not merely:
+
+\[
+\text{physical inscription}
+\]
+
+Stoic distinction:
+
+\[
+\boxed{
+\text{speech}
+\rightarrow
+\text{expresses}
+\rightarrow
+\text{LEKTON}
+}
+\]
+\end{whiteboard}
+
+But we must not immediately identify a lekton with a modern
+proposition.
+
+The Stoic theory is more complicated.
+
+% ============================================================
+\section{Complete and Defective Lekta}
+% ============================================================
+
+The Stoics divide lekta into complete and defective.
+
+A defective lekton does not by itself constitute a finished
+content.
+
+For example:
+
+\begin{center}
+``writes''
+\end{center}
+
+leaves us asking:
+
+\begin{center}
+Who writes?
+\end{center}
+
+By contrast:
+
+\begin{center}
+``Socrates writes''
+\end{center}
+
+expresses a complete lekton.
+
+\begin{whiteboard}
+\textbf{LEKTA}
+
+\[
+\begin{array}{rl}
+\textbf{DEFECTIVE:}
+&
+\text{``\ldots writes''}
+\\
+&
+\Rightarrow \text{Who?}
+\\[0.8em]
+\textbf{COMPLETE:}
+&
+\text{``Socrates writes.''}
+\end{array}
+\]
+
+\[
+\text{predicate alone}
+\rightarrow
+\text{incomplete}
+\]
+
+\[
+\text{finished content}
+\rightarrow
+\text{complete}
+\]
+\end{whiteboard}
+
+Defective lekta include such things as predicates and subjects
+considered apart from complete assertion.
+
+% ============================================================
+\section{Axiomata}
+% ============================================================
+
+Among complete lekta, the most important logical class is the
+\textbf{axioma}.
+
+The word must not be confused with the modern mathematical word
+``axiom.''
+
+A Stoic axioma is roughly a complete declarative content capable
+of truth or falsity.
+
+Other complete lekta include:
+
+\begin{itemize}
+    \item questions;
+    \item commands;
+    \item prayers;
+    \item oaths;
+    \item suppositions;
+    \item addresses.
+\end{itemize}
+
+These need not themselves be true or false.
+
+\begin{whiteboard}
+\textbf{COMPLETE LEKTA}
+
+\[
+\begin{array}{rcl}
+\textbf{AXIOMA}
+&\rightarrow&
+\text{TRUE or FALSE}
+\\[0.4em]
+\text{question}
+&\rightarrow&
+\text{not true / false}
+\\[0.4em]
+\text{command}
+&\rightarrow&
+\text{not true / false}
+\\[0.4em]
+\text{prayer}
+&\rightarrow&
+\text{not true / false}
+\end{array}
+\]
+
+\boardtakeaway{AXIOMA = complete declaratory lekton capable of truth or falsity.}
+\end{whiteboard}
+
+This is a significant advance in the analysis of meaning.
+
+Not everything that has complete meaning is therefore a bearer of
+truth-value.
+
+% ============================================================
+\section{Where Truth and Falsity Belong}
+% ============================================================
+
+The Stoics explicitly distinguish several candidates for truth and
+falsity.
+
+According to the doctrine reported by Sextus, the fundamental
+bearer of truth is neither:
+
+\begin{itemize}
+    \item the spoken expression as such;
+    \item nor merely a physical or psychological movement of
+    thought.
+\end{itemize}
+
+Truth and falsity fundamentally concern what is signified.
+
+For logical purposes, the axioma becomes the crucial bearer of
+truth-value.
+
+\begin{whiteboard}
+\textbf{WHAT IS TRUE OR FALSE?}
+
+Not fundamentally:
+
+\[
+\text{sound / sentence-token}
+\]
+
+Not fundamentally:
+
+\[
+\text{mental movement}
+\]
+
+Stoic answer:
+
+\[
+\boxed{
+\text{AXIOMA / SIGNIFIED CONTENT}
+}
+\]
+
+\[
+\text{truth is fundamentally attached to what is meant}
+\]
+\end{whiteboard}
+
+The Stoics also used ``true'' and ``false'' in derivative ways for
+presentations and arguments.
+
+A true argument, for example, was valid and had true premisses.
+
+% ============================================================
+\section{The True and the Truth}
+% ============================================================
+
+The Stoics even distinguish:
+
+\begin{center}
+\textbf{the true}
+\end{center}
+
+from:
+
+\begin{center}
+\textbf{truth}.
+\end{center}
+
+The true is an incorporeal axioma.
+
+Truth, in the special Stoic sense, is a body of knowledge
+possessed by a knower.
+
+This distinction belongs partly to Stoic metaphysics and
+epistemology rather than formal logic, so we need only record its
+structure.
+
+\begin{whiteboard}
+\textbf{STOIC DISTINCTION}
+
+\[
+\begin{array}{rcl}
+\textbf{the true}
+&=&
+\text{a true axioma}
+\\
+&&
+\text{incorporeal}
+\\[0.7em]
+\textbf{truth}
+&=&
+\text{a body of knowledge}
+\\
+&&
+\text{corporeal in Stoic theory}
+\end{array}
+\]
+\end{whiteboard}
+
+Our logical concern remains chiefly with true and false axiomata.
+
+% ============================================================
+\section{Negation and the Discovery of Scope}
+% ============================================================
+
+The Stoics give careful attention to negation.
+
+To form the contradictory of an axioma, the negative must govern
+the \textbf{whole} axioma.
+
+Compare:
+
+\[
+\neg(P\land Q)
+\]
+
+with:
+
+\[
+P\land\neg Q.
+\]
+
+These are not the same proposition.
+
+In the first, negation applies to the entire conjunction.
+
+In the second, it applies only to \(Q\).
+
+\begin{whiteboard}
+\textbf{SCOPE OF NEGATION}
+
+\[
+\boxed{\neg(P\land Q)}
+\]
+
+means:
+
+\[
+\text{NOT: both }P\text{ and }Q
+\]
+
+But:
+
+\[
+P\land\neg Q
+\]
+
+means:
+
+\[
+P\text{ and not-}Q
+\]
+
+Therefore:
+
+\[
+\boxed{
+\neg(P\land Q)
+\neq
+P\land\neg Q
+}
+\]
+
+\boardtakeaway{Negation of the whole $\neq$ negation of one part.}
+\end{whiteboard}
+
+The Kneales identify this discussion as the first appearance in
+the history of logic of something recognizably like the notion of
+the \textbf{scope of an operator}.
+
+% ============================================================
+\section{Double Negation}
+% ============================================================
+
+The Stoics also recognize a double negative and hold it equivalent
+to the corresponding affirmative.
+
+In modern notation:
+
+\[
+\neg\neg P
+\]
+
+is equivalent to:
+
+\[
+P.
+\]
+
+\begin{whiteboard}
+\textbf{DOUBLE NEGATION}
+
+\[
+\boxed{
+\neg\neg P
+\Longleftrightarrow
+P
+}
+\]
+
+Stoic terminology includes the idea of a
+``super-negative.''
+\end{whiteboard}
+
+This principle later becomes important in the reconstruction of
+Stoic derivations.
+
+% ============================================================
+\section{Universal Statements as Conditionals}
+% ============================================================
+
+Another striking difference from Aristotle appears in the Stoic
+treatment of general propositions.
+
+A statement such as:
+
+\begin{center}
+Man is a rational mortal animal
+\end{center}
+
+can be represented approximately as:
+
+\begin{center}
+If anything is a man, then it is a rational mortal animal.
+\end{center}
+
+Thus universality is expressed by conditional structure.
+
+\begin{whiteboard}
+\textbf{ARISTOTELIAN STYLE}
+
+\[
+\text{Every man is mortal.}
+\]
+
+\textbf{STOIC-STYLE ANALYSIS}
+
+\[
+\boxed{
+\text{If anything is a man, then it is mortal.}
+}
+\]
+
+\[
+\text{universal predication}
+\rightarrow
+\text{conditional structure}
+\]
+\end{whiteboard}
+
+This helps explain why conditionals become so central in Stoic
+logic.
+
+% ============================================================
+\section{Simple and Complex Axiomata}
+% ============================================================
+
+The Stoics distinguish simple from non-simple or complex
+axiomata.
+
+Complex axiomata are constructed by means of connectives.
+
+The ancient classification includes several forms.
+
+For our logical purposes the principal structures can be displayed
+using modern notation.
+
+\begin{whiteboard}
+\textbf{COMPLEX AXIOMATA}
+
+\[
+\begin{array}{rcl}
+\neg P
+&=&
+\text{negation}
+\\[0.4em]
+P\land Q
+&=&
+\text{conjunction}
+\\[0.4em]
+P\lor Q
+&=&
+\text{disjunction}
+\\[0.4em]
+P\rightarrow Q
+&=&
+\text{conditional}
+\\[0.4em]
+\neg(P\land Q)
+&=&
+\text{``not both''}
+\end{array}
+\]
+
+\boardtakeaway{Modern symbols are ours, not Stoic notation.}
+\end{whiteboard}
+
+The Stoic classification also includes causal and comparative
+complexes, but these need not occupy our main formal discussion.
+
+% ============================================================
+\section{Conjunction}
+% ============================================================
+
+The Stoics recognized the familiar truth condition for
+conjunction.
+
+A conjunction is true when all of its components are true and
+false when at least one component is false.
+
+\begin{whiteboard}
+\textbf{CONJUNCTION}
+
+\[
+P\land Q
+\]
+
+is TRUE iff:
+
+\[
+P=T
+\quad\text{and}\quad
+Q=T
+\]
+
+Otherwise:
+
+\[
+P\land Q=F
+\]
+\end{whiteboard}
+
+This is a clear example of truth-functional treatment.
+
+% ============================================================
+\section{Stoic Disjunction}
+% ============================================================
+
+The early Stoic disjunction is normally strong or exclusive.
+
+Thus:
+
+\[
+P\xor Q
+\]
+
+means:
+
+\begin{center}
+one or the other, but not both.
+\end{center}
+
+Later Stoics also recognized a weaker form under which the
+disjunction is true if at least one disjunct is true.
+
+\begin{whiteboard}
+\textbf{STOIC ``OR''}
+
+Early strong form:
+
+\[
+P\xor Q
+\]
+
+means:
+
+\[
+\boxed{
+\text{one OR the other, BUT NOT BOTH}
+}
+\]
+
+Later tradition also recognizes:
+
+\[
+P\lor Q
+\]
+
+where both may be true.
+\end{whiteboard}
+
+This distinction is important because Chrysippus' fourth and fifth
+indemonstrables depend upon the strong disjunction.
+
+% ============================================================
+\section{Axioma and the Modern Proposition}
+% ============================================================
+
+It is tempting to identify:
+
+\[
+\text{axioma}
+=
+\text{proposition}.
+\]
+
+The comparison is useful but not exact.
+
+Stoic axiomata can possess features that modern philosophers
+often exclude from abstract propositions.
+
+They can involve:
+
+\begin{itemize}
+    \item mood;
+    \item tense;
+    \item context-sensitive reference;
+    \item changing truth-values.
+\end{itemize}
+
+Some Stoic discussions even allow an axioma to be
+``destroyed'' when the mode of reference upon which it depends
+can no longer operate.
+
+\begin{whiteboard}
+\textbf{AXIOMA $\approx$ PROPOSITION}
+
+But not exactly.
+
+Stoic axioma may have:
+
+\[
+\begin{array}{c}
+\text{mood}\\
+\text{tense}\\
+\text{context}\\
+\text{changing truth-value}
+\end{array}
+\]
+
+and may even:
+
+\[
+\text{cease to be expressible}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{``destroyed''}
+\]
+
+\boardtakeaway{Do not turn the Stoics into modern logicians too quickly.}
+\end{whiteboard}
+
+The Stoics have clearly distinguished linguistic expression from
+what it means, but their lekta preserve more features of
+utterance-context than many later theories of propositions do.
+
+% ============================================================
+% PART V
+% ============================================================
+
+\part*{V. The Stoic System of Inference Schemata}
+
+% ============================================================
+\section{The Fundamental Contrast with Aristotle}
+% ============================================================
+
+We have now reached the formal center of Stoic logic.
+
+The key contrast with Aristotle concerns the kinds of variables
+used.
+
+Aristotle uses letters as places for \textbf{terms}.
+
+The Stoics instead use ordinal expressions such as:
+
+\begin{center}
+the first, the second, the third
+\end{center}
+
+as places for \textbf{whole propositions}.
+
+This difference is fundamental.
+
+\begin{whiteboard}
+\textbf{ARISTOTLE}
+
+\[
+\begin{array}{l}
+\text{Every }M\text{ is }L\\
+\text{Every }S\text{ is }M\\
+\hline
+\therefore \text{Every }S\text{ is }L
+\end{array}
+\]
+
+\[
+M,S,L
+\rightarrow
+\boxed{\text{TERM VARIABLES}}
+\]
+\end{whiteboard}
+
+\begin{whiteboard}
+\textbf{STOICS}
+
+\[
+\begin{array}{l}
+\text{If the FIRST, then the SECOND}\\
+\text{The FIRST}\\
+\hline
+\therefore \text{The SECOND}
+\end{array}
+\]
+
+\[
+P,Q
+\rightarrow
+\boxed{\text{PROPOSITIONAL VARIABLES}}
+\]
+\end{whiteboard}
+
+This is the key to understanding why Stoic logic anticipates what
+later came to be called propositional logic.
+
+% ============================================================
+\section{Inference Schemata}
+% ============================================================
+
+Where Aristotle often formulates a logical principle as a
+conditional statement about terms, the Stoics regularly present
+\textbf{skeleton arguments}.
+
+Using modern letters merely for convenience:
+
+\begin{whiteboard}
+\textbf{INFERENCE SCHEMA}
+
+\[
+\begin{array}{c}
+P\rightarrow Q\\
+P\\
+\hline
+Q
+\end{array}
+\]
+
+\[
+\boxed{
+P,Q=\text{whole propositions}
+}
+\]
+
+\boardtakeaway{The form is a pattern of ARGUMENT, not merely a relation among terms.}
+\end{whiteboard}
+
+The Stoics themselves used ordinal expressions rather than our
+letters \(P,Q,R\).
+
+% ============================================================
+\section{The Five Indemonstrables}
+% ============================================================
+
+Chrysippus recognizes five fundamental inference schemata.
+
+Ancient authors call them the
+\textbf{indemonstrable moods}.
+
+They function as basic inference patterns from which more
+complicated arguments can be analyzed.
+
+Because the board is small, they should be written in two
+packets.
+
+% ============================================================
+\subsection{First and Second Indemonstrables}
+% ============================================================
+
+\begin{whiteboard}
+\textbf{FIVE INDEMONSTRABLES --- I}
+
+\textbf{1.}
+
+\[
+\begin{array}{c}
+P\rightarrow Q\\
+P\\
+\hline
+Q
+\end{array}
+\]
+
+\textbf{2.}
+
+\[
+\begin{array}{c}
+P\rightarrow Q\\
+\neg Q\\
+\hline
+\neg P
+\end{array}
+\]
+
+Modern later names:
+
+\[
+1=\text{modus ponens}
+\]
+
+\[
+2=\text{modus tollens}
+\]
+
+\textit{Copy, then erase.}
+\end{whiteboard}
+
+The Latin names are later.
+
+They are useful labels for us, but they should not be projected
+back onto Chrysippus.
+
+% ============================================================
+\subsection{Third, Fourth, and Fifth Indemonstrables}
+% ============================================================
+
+The third uses a ``not both'' proposition.
+
+The fourth and fifth use the Stoics' strong or exclusive
+disjunction.
+
+\begin{whiteboard}
+\textbf{FIVE INDEMONSTRABLES --- II}
+
+\textbf{3.}
+
+\[
+\begin{array}{c}
+\neg(P\land Q)\\
+P\\
+\hline
+\neg Q
+\end{array}
+\]
+
+\textbf{4.}
+
+\[
+\begin{array}{c}
+P\xor Q\\
+P\\
+\hline
+\neg Q
+\end{array}
+\]
+
+\textbf{5.}
+
+\[
+\begin{array}{c}
+P\xor Q\\
+\neg Q\\
+\hline
+P
+\end{array}
+\]
+
+\[
+\xor
+=
+\text{exclusive OR}
+\]
+\end{whiteboard}
+
+Together these five patterns form the basic machinery of
+Chrysippean inference.
+
+% ============================================================
+\section{Why They Are Called Indemonstrable}
+% ============================================================
+
+``Indemonstrable'' does not mean unintelligible or irrational.
+
+The five forms function as basic inference patterns rather than
+patterns that must themselves be derived from still more
+fundamental Stoic moods.
+
+More complicated valid forms can then be analyzed in terms of
+them.
+
+\begin{whiteboard}
+\textbf{INDEMONSTRABLES}
+
+\[
+\boxed{\text{BASIC inference patterns}}
+\]
+
+\[
+\begin{array}{c}
+\text{five basic moods}\\
+\downarrow\\
+\text{formal derivation}\\
+\downarrow\\
+\text{more complex moods}
+\end{array}
+\]
+
+\boardtakeaway{Logic becomes a deductive system of inference rules.}
+\end{whiteboard}
+
+This is a crucial difference between merely collecting examples
+of good arguments and constructing a logical system.
+
+% ============================================================
+\section{Leading Premise and Additional Assumption}
+% ============================================================
+
+For Chrysippus, the simplest argument normally contains two
+premisses.
+
+One is complex and determines the characteristic structure of the
+argument.
+
+This is called the \textbf{leading premiss}.
+
+The second is the \textbf{additional assumption}.
+
+\begin{whiteboard}
+\textbf{STOIC BASIC ARGUMENT}
+
+\[
+\boxed{\text{Leading premiss}}
+\]
+
+\[
+\text{complex proposition}
+\]
+
+\[
++
+\]
+
+\[
+\boxed{\text{Additional assumption}}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{CONCLUSION}
+\]
+\end{whiteboard}
+
+Chrysippus regarded the two-premiss form as basic.
+
+Antipater later recognized one-premiss inference, and this was
+remembered as an innovation.
+
+\begin{whiteboard}
+\[
+\begin{array}{rcl}
+\text{Chrysippus:}
+&
+\text{simplest inference}
+&=
+2\text{ premisses}
+\\[0.4em]
+\text{Antipater:}
+&
+\text{one-premiss inference}
+&=
+\text{allowed}
+\end{array}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Derived Inference}
+% ============================================================
+
+The most important feature of the Stoic system is that complicated
+arguments can be reduced to sequences of simpler ones.
+
+Consider:
+
+\[
+(P\land Q)\rightarrow R,
+\]
+
+\[
+\neg R,
+\]
+
+\[
+P.
+\]
+
+We wish to derive:
+
+\[
+\neg Q.
+\]
+
+First use the second indemonstrable on:
+
+\[
+(P\land Q)\rightarrow R
+\]
+
+and:
+
+\[
+\neg R.
+\]
+
+This yields:
+
+\[
+\neg(P\land Q).
+\]
+
+Then apply the third indemonstrable to:
+
+\[
+\neg(P\land Q)
+\]
+
+and:
+
+\[
+P.
+\]
+
+The result is:
+
+\[
+\neg Q.
+\]
+
+Because the board is small, do the derivation in packets.
+
+\begin{whiteboard}
+\textbf{DERIVED ARGUMENT --- SETUP}
+
+\[
+\begin{array}{c}
+(P\land Q)\rightarrow R\\
+\neg R\\
+P\\
+\hline
+\therefore \neg Q
+\end{array}
+\]
+
+\textit{Copy, then erase.}
+\end{whiteboard}
+
+\begin{whiteboard}
+\textbf{DERIVED ARGUMENT --- STEP 1}
+
+\[
+\begin{array}{c}
+(P\land Q)\rightarrow R\\
+\neg R\\
+\hline
+\neg(P\land Q)
+\end{array}
+\]
+
+Using Indemonstrable 2.
+\end{whiteboard}
+
+\begin{whiteboard}
+\textbf{DERIVED ARGUMENT --- STEP 2}
+
+\[
+\begin{array}{c}
+\neg(P\land Q)\\
+P\\
+\hline
+\neg Q
+\end{array}
+\]
+
+Using Indemonstrable 3.
+
+\[
+\boxed{
+\text{Complex inference}
+=
+\text{sequence of basic moods}
+}
+\]
+\end{whiteboard}
+
+This is one of the clearest surviving examples of the systematic
+character of Stoic logic.
+
+% ============================================================
+\section{Intermediate Conclusions}
+% ============================================================
+
+The preceding demonstration depends on an important proof
+principle.
+
+What has been derived from some premisses may itself be used as
+a premiss in a further inference.
+
+Schematically:
+
+\[
+P_1,P_2\vdash Q
+\]
+
+and:
+
+\[
+Q,P_3\vdash R.
+\]
+
+Then:
+
+\[
+P_1,P_2,P_3\vdash R.
+\]
+
+\begin{whiteboard}
+\textbf{INTERMEDIATE CONCLUSIONS}
+
+\[
+\begin{array}{c}
+P_1,P_2\vdash Q\\
+Q,P_3\vdash R\\
+\hline
+P_1,P_2,P_3\vdash R
+\end{array}
+\]
+
+\boardtakeaway{An intermediate conclusion may become a new premiss.}
+\end{whiteboard}
+
+This principle is obvious to a modern student familiar with
+formal proof, but its explicit use is historically significant.
+
+% ============================================================
+\section{The Themata}
+% ============================================================
+
+Ancient reports also tell us that the Stoics used four
+\textbf{themata} in the analysis of complicated arguments.
+
+Unfortunately, only fragments of this doctrine survive.
+
+The first and third are known with reasonable clarity.
+
+The second and fourth are lost and can only be reconstructed
+conjecturally.
+
+The Kneales therefore treat this part of Stoic logic cautiously.
+
+\begin{whiteboard}
+\textbf{THEMATA}
+
+\[
+\boxed{
+\text{general rules for ANALYZING complex arguments}
+}
+\]
+
+Four were recognized.
+
+But:
+
+\[
+\text{1st + 3rd survive clearly}
+\]
+
+\[
+\text{2nd + 4th are lost}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{The First Thema}
+% ============================================================
+
+The first thema can be represented approximately as follows.
+
+If two premisses entail a conclusion, then either premiss together
+with the negation of the conclusion entails the negation of the
+other premiss.
+
+Schematically:
+
+\[
+P,Q\vdash R
+\]
+
+gives:
+
+\[
+P,\neg R\vdash\neg Q.
+\]
+
+\begin{whiteboard}
+\textbf{FIRST THEMA}
+
+If:
+
+\[
+P,Q\vdash R
+\]
+
+then:
+
+\[
+\boxed{
+P,\neg R\vdash\neg Q
+}
+\]
+
+and correspondingly:
+
+\[
+Q,\neg R\vdash\neg P
+\]
+\end{whiteboard}
+
+This is closely related to the familiar technique of indirect
+argument.
+
+% ============================================================
+\section{The Third Thema}
+% ============================================================
+
+The third thema concerns the substitution of a derivation into a
+larger argument.
+
+Suppose some argument requires \(Q\) as a premiss.
+
+If \(Q\) has itself been established from \(P_1\) and \(P_2\),
+those supporting premisses can replace \(Q\) in the larger
+derivation.
+
+\begin{whiteboard}
+\textbf{THIRD THEMA}
+
+Suppose:
+
+\[
+P_1,P_2\vdash Q
+\]
+
+and:
+
+\[
+Q,R\vdash S.
+\]
+
+Then:
+
+\[
+\boxed{
+P_1,P_2,R\vdash S
+}
+\]
+
+\[
+\text{derived premiss}
+\rightarrow
+\text{replace by its supporting premisses}
+\]
+\end{whiteboard}
+
+The principle helps explain how the Stoics could reduce
+complicated arguments to combinations of their basic forms.
+
+% ============================================================
+\section{Conditionalization}
+% ============================================================
+
+The Kneales' reconstruction of Stoic procedure suggests another
+important principle.
+
+If:
+
+\[
+P,Q\vdash R,
+\]
+
+the corresponding necessary connexion can be represented by the
+conditional:
+
+\[
+(P\land Q)\rightarrow R.
+\]
+
+This allows a valid inference relation to be introduced as a
+conditional premiss inside another argument.
+
+\begin{whiteboard}
+\textbf{CONDITIONALIZATION}
+
+\[
+P,Q\vdash R
+\]
+
+becomes:
+
+\[
+\boxed{
+(P\land Q)\rightarrow R
+}
+\]
+
+\[
+\text{inference pattern}
+\rightarrow
+\text{conditional premiss}
+\]
+\end{whiteboard}
+
+This is an important modern reconstruction of how the Stoic
+system may have operated.
+
+It should not be presented as though this exact symbolic rule
+survived in Chrysippus' own writings.
+
+% ============================================================
+\section{Reductio Returns}
+% ============================================================
+
+One of the most important Stoic derived patterns brings us back
+to the very origins of the Megarian tradition.
+
+Suppose:
+
+\[
+P\rightarrow Q
+\]
+
+and:
+
+\[
+P\rightarrow\neg Q.
+\]
+
+Then:
+
+\[
+\neg P.
+\]
+
+\begin{whiteboard}
+\textbf{STOIC DERIVED REDUCTIO}
+
+\[
+\begin{array}{c}
+P\rightarrow Q\\
+P\rightarrow\neg Q\\
+\hline
+\neg P
+\end{array}
+\]
+
+Historical line:
+
+\[
+\text{Zeno}
+\rightarrow
+\text{Megarians}
+\rightarrow
+\text{Chrysippus}
+\]
+
+\boardtakeaway{Dialectical practice has become formal theory.}
+\end{whiteboard}
+
+This is historically beautiful.
+
+The style of argument that had helped stimulate Megarian logic
+has now been incorporated into a systematic formal calculus.
+
+% ============================================================
+\section{Consequentia Mirabilis}
+% ============================================================
+
+Another striking form associated with Stoic logical development
+is:
+
+\[
+\neg P\rightarrow P.
+\]
+
+From this, under the relevant principles of the system, one may
+derive:
+
+\[
+P.
+\]
+
+The pattern later came to be known as
+\textit{consequentia mirabilis}.
+
+\begin{whiteboard}
+\textbf{CONSEQUENTIA MIRABILIS}
+
+\[
+\begin{array}{c}
+\neg P\rightarrow P\\
+\hline
+P
+\end{array}
+\]
+
+Interpretive idea:
+
+\[
+\boxed{
+\text{If denying }P\text{ forces }P,\text{ then }P.
+}
+\]
+\end{whiteboard}
+
+The pattern became important in later anti-sceptical and logical
+arguments.
+
+But we should not assume that every philosophical application of
+the form establishes as much as its user claims.
+
+% ============================================================
+\section{Rigour and Formalism}
+% ============================================================
+
+Ancient Peripatetics sometimes criticized the Stoics for excessive
+attention to verbal or formal details.
+
+Chrysippus apparently proved even results that other philosophers
+were content simply to assume.
+
+To modern students trained in mathematical reasoning, this
+``excessive'' concern for form may look much more like a virtue
+than a defect.
+
+\begin{whiteboard}
+\textbf{ANCIENT CRITICISM}
+
+Stoics:
+
+\[
+\text{too formal}
+\]
+
+\[
+\text{too concerned with exact expression}
+\]
+
+Modern perspective:
+
+\[
+\boxed{
+\text{formal precision is a major logical achievement}
+}
+\]
+\end{whiteboard}
+
+Unfortunately, the hostile ancient reputation of Stoic formalism
+may have contributed to the disappearance of Chrysippus'
+logical works.
+
+% ============================================================
+\section{Did the Stoics Claim Completeness?}
+% ============================================================
+
+Ancient reports suggest that Chrysippus believed complicated valid
+arguments could ultimately be analyzed through the five
+indemonstrables.
+
+This resembles a claim of completeness.
+
+But we must be careful.
+
+The Stoics did not possess our modern technical definition of a
+complete formal calculus, nor do we possess an ancient proof of
+completeness in the modern sense.
+
+\begin{whiteboard}
+\textbf{STOIC SYSTEMATIC CLAIM}
+
+\[
+\text{valid arguments}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{analysis}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{\text{FIVE INDEMONSTRABLES}}
+\]
+
+But:
+
+\[
+\boxed{
+\text{ancient ``complete''}
+\neq
+\text{modern completeness theorem}
+}
+\]
+\end{whiteboard}
+
+Modern reconstructions can prove strong results for reconstructed
+Stoic systems, but those achievements must not simply be
+attributed to Chrysippus without evidence.
+
+% ============================================================
+\section{Aristotle and Chrysippus Compared}
+% ============================================================
+
+We can now make the central comparison of the chapter.
+
+Aristotle's variables range over \textbf{general terms}.
+
+Stoic variables range over \textbf{propositions}.
+
+Aristotle therefore analyzes logical relations involving the
+internal structure of propositions.
+
+The Stoics analyze patterns of inference determined by the ways
+whole propositions are joined by connectives.
+
+\begin{whiteboard}
+\textbf{ARISTOTLE}
+
+\[
+\begin{array}{l}
+\text{Every }M\text{ is }L\\
+\text{Every }S\text{ is }M\\
+\hline
+\text{Every }S\text{ is }L
+\end{array}
+\]
+
+\[
+\boxed{\text{variables } \rightarrow \text{ TERMS}}
+\]
+\end{whiteboard}
+
+\begin{whiteboard}
+\textbf{CHRYSIPPUS}
+
+\[
+\begin{array}{c}
+P\rightarrow Q\\
+P\\
+\hline
+Q
+\end{array}
+\]
+
+\[
+\boxed{\text{variables } \rightarrow \text{ PROPOSITIONS}}
+\]
+\end{whiteboard}
+
+The distinction can be stated in one line.
+
+\begin{whiteboard}
+\[
+\begin{array}{rcl}
+\textbf{Aristotle}
+&\rightarrow&
+\text{relations WITHIN propositions}
+\\[0.6em]
+\textbf{Stoics}
+&\rightarrow&
+\text{relations BETWEEN propositions}
+\end{array}
+\]
+\end{whiteboard}
+
+This is why the two systems are complementary rather than
+genuine competitors.
+
+% ============================================================
+\section{Primary Logic}
+% ============================================================
+
+The Kneales propose the term \textbf{primary logic} for the
+fundamental theory involving such notions as:
+
+\[
+\neg,
+\qquad
+\land,
+\qquad
+\lor,
+\qquad
+\rightarrow.
+\]
+
+This logic deals with the combinations and inferential relations
+of propositions without yet introducing the generality expressed
+by ``every'' and ``some.''
+
+\begin{whiteboard}
+\textbf{PRIMARY LOGIC}
+
+\[
+\boxed{
+\neg
+\qquad
+\land
+\qquad
+\lor
+\qquad
+\rightarrow
+}
+\]
+
+Concern:
+
+\[
+\text{relations among propositions}
+\]
+\end{whiteboard}
+
+Stoic dialectic is the first substantial ancient version of this
+kind of logic.
+
+% ============================================================
+\section{General Logic}
+% ============================================================
+
+The Kneales reserve the expression \textbf{general logic} for the
+larger theory in which primary logic is combined with notions of
+generality such as:
+
+\[
+\text{every}
+\]
+
+and:
+
+\[
+\text{some}.
+\]
+
+Thus general logic includes quantificational structure.
+
+\begin{whiteboard}
+\textbf{GENERAL LOGIC}
+
+\[
+\boxed{
+\text{PRIMARY LOGIC}
++
+\text{EVERY / SOME}
+}
+\]
+
+That is:
+
+\[
+\text{connectives}
++
+\text{quantification}
+\]
+\end{whiteboard}
+
+Primary logic is more fundamental not because it contains general
+logic, but because general logic presupposes it.
+
+\begin{whiteboard}
+\[
+\boxed{
+\text{General logic presupposes primary logic.}
+}
+\]
+
+But:
+
+\[
+\text{primary logic can be developed independently.}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Where Aristotle and Chrysippus Fit}
+% ============================================================
+
+With this terminology, the Kneales give a striking reinterpretation
+of ancient logic.
+
+Aristotle's syllogistic is a \textbf{fragment of general logic}.
+
+It deals explicitly with generality and relations among general
+terms.
+
+But it tacitly relies upon principles of primary logic that
+Aristotle does not formulate as a separate system.
+
+Chrysippus, by contrast, produces the first major ancient
+\textbf{primary logic}.
+
+\begin{whiteboard}
+\textbf{TWO ACHIEVEMENTS}
+
+\[
+\begin{array}{rcl}
+\textbf{Chrysippus}
+&\rightarrow&
+\boxed{\text{first primary logic}}
+\\[0.8em]
+\textbf{Aristotle}
+&\rightarrow&
+\boxed{\text{fragment of general logic}}
+\end{array}
+\]
+
+Aristotle:
+
+\[
+\text{quantification without a separate}
+\]
+
+\[
+\text{formal calculus of propositional connexion}
+\]
+
+Chrysippus:
+
+\[
+\text{propositional connexion without}
+\]
+
+\[
+\text{Aristotle's quantificational term theory}
+\]
+\end{whiteboard}
+
+The two systems solve different parts of the larger problem.
+
+% ============================================================
+\section{The Correct Historical Picture}
+% ============================================================
+
+Ancient partisans tended to ask:
+
+\begin{center}
+Aristotle or Chrysippus?
+\end{center}
+
+The more fruitful question is:
+
+\begin{center}
+How do the two systems fit together?
+\end{center}
+
+\begin{whiteboard}
+\textbf{NOT:}
+
+\[
+\text{ARISTOTLE}
+\quad
+\mathbf{VS.}
+\quad
+\text{CHRYSIPPUS}
+\]
+
+\vspace{0.6em}
+
+\textbf{BUT:}
+
+\[
+\boxed{
+\text{ARISTOTLE}
++
+\text{CHRYSIPPUS}
+}
+\]
+
+\[
+\boxed{
+\text{TERM / GENERAL LOGIC}
++
+\text{PROPOSITIONAL / PRIMARY LOGIC}
+}
+\]
+\end{whiteboard}
+
+The intellectual loss of antiquity was not that one school chose
+the wrong logic.
+
+It was that the complementary character of the two achievements
+was obscured by rivalry.
+
+% ============================================================
+\section{Chapter Summary}
+% ============================================================
+
+The Megarian--Stoic tradition begins from a different source than
+Aristotle's logic.
+
+Instead of taking geometrical demonstration as its principal
+model, it grows from dialectic, reductio, paradox, and argument
+with complex propositions.
+
+Eubulides' paradoxes expose problems of truth, identity,
+vagueness, and presupposition.
+
+Diodorus and Philo develop rival accounts of possibility.
+
+Diodorus' Master Argument attempts to tie possibility to what is
+or will be true, but the Kneales argue that the reasoning depends
+upon confusion between sentences, tense, and the contents those
+sentences express.
+
+The Megarian debate over conditionals then asks what makes an
+``if \ldots then \ldots'' proposition sound.
+
+Philo develops a truth-functional account.
+
+Diodorus proposes a stronger temporally constrained account.
+
+The theory of connexion requires incompatibility between the
+antecedent and the negation of the consequent.
+
+The Stoics then develop a sophisticated semantic theory
+distinguishing expressions, objects, and incorporeal lekta.
+
+Among complete lekta, axiomata are the principal bearers of
+truth and falsity.
+
+Stoic discussion of negation introduces an explicit concern with
+the scope of an operator.
+
+Finally, Chrysippus systematizes inference among whole
+propositions through five indemonstrable moods and procedures
+for deriving more complex arguments.
+
+\begin{whiteboard}
+\textbf{CHAPTER III SUMMARY}
+
+\[
+\begin{array}{c}
+\text{Megarian paradox}\\
+\downarrow\\
+\text{logical problems}
+\\[0.8em]
+\text{modality}\\
+\downarrow\\
+\text{Diodorus / Philo}
+\\[0.8em]
+\text{conditionals}\\
+\downarrow\\
+\text{truth-function / connexion}
+\\[0.8em]
+\text{lekta + axiomata}\\
+\downarrow\\
+\text{meaning / truth / scope}
+\\[0.8em]
+\text{five indemonstrables}\\
+\downarrow\\
+\text{systematic propositional inference}
+\end{array}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Final Historical Takeaway}
+% ============================================================
+
+The great achievement of Aristotle was the systematic study of
+inferences involving general terms.
+
+The great achievement of the Stoics was the systematic study of
+inferences whose validity depends upon the logical relations
+among whole propositions.
+
+Neither achievement eliminates the other.
+
+A mature logic requires both.
+
+\begin{whiteboard}
+\textbf{FINAL TAKEAWAY}
+
+\[
+\begin{array}{ccc}
+\textbf{ARISTOTLE}
+&&
+\textbf{CHRYSIPPUS}
+\\
+\text{terms}
+&&
+\text{propositions}
+\\
+\text{syllogistic}
+&&
+\text{connectives}
+\\
+\text{general logic}
+&&
+\text{primary logic}
+\end{array}
+\]
+
+\vspace{0.8em}
+
+\[
+\boxed{
+\begin{array}{c}
+\text{Ancient logic discovered two major pieces}\\
+\text{of one larger logical system.}
+\end{array}
+}
+\]
+
+\vspace{0.8em}
+
+\[
+\text{Next: Roman and Medieval Logic}
+\]
+\end{whiteboard}
+
+\end{document}
