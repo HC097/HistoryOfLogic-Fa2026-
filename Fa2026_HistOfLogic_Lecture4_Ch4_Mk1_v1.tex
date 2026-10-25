@@ -1,0 +1,3931 @@
+\documentclass[11pt]{article}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+
+\usepackage[margin=0.8in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{ragged2e}
+
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+
+\usepackage{hyperref}
+
+% ============================================================
+% HYPERREF
+% ============================================================
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black,
+    pdftitle={History of Logic: Roman and Medieval Logic},
+    pdfauthor={}
+}
+
+% ============================================================
+% GENERAL FORMATTING
+% ============================================================
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+
+\setlist[itemize]{leftmargin=1.5em}
+\setlist[enumerate]{leftmargin=1.7em}
+
+% ============================================================
+% CUSTOM COMMANDS
+% ============================================================
+
+\newcommand{\term}[1]{\textit{#1}}
+\newcommand{\latin}[1]{\textit{#1}}
+\newcommand{\thereforemark}{\(\therefore\)}
+\newcommand{\imp}{\(\rightarrow\)}
+\newcommand{\entails}{\(\vdash\)}
+
+% ============================================================
+% WHITEBOARD ENVIRONMENT
+% ============================================================
+
+\newtcolorbox{whiteboard}[1][]{
+    breakable,
+    colback=white,
+    colframe=black,
+    boxrule=0.8pt,
+    arc=0pt,
+    left=7pt,
+    right=7pt,
+    top=6pt,
+    bottom=6pt,
+    before skip=8pt,
+    after skip=10pt,
+    title={WHITEBOARD},
+    fonttitle=\bfseries,
+    #1
+}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{History of Logic}}\\[0.4em]
+    {\Large \textbf{Roman and Medieval Logic}}\\[0.6em]
+    {\normalsize Based on William and Martha Kneale,
+    \textit{The Development of Logic}, Chapter IV}
+\end{center}
+
+\vspace{0.5em}
+\hrule
+\vspace{0.8em}
+
+% ============================================================
+% LECTURE AIM
+% ============================================================
+
+\section*{Lecture Aim}
+
+The Roman and medieval period is not merely an interval between
+ancient logic and modern logic.
+
+It begins with the transmission, translation, and partial fusion
+of the Aristotelian and Stoic traditions, but it eventually
+produces distinctively medieval theories of propositions,
+semantic reference, quantification, paradox, modality, and
+consequence.
+
+The central historical movement of the lecture is:
+
+\begin{center}
+\textbf{TRANSMISSION}
+\(\longrightarrow\)
+\textbf{RECOVERY}
+\(\longrightarrow\)
+\textbf{INNOVATION}
+\end{center}
+
+By the end of the period, medieval logicians have reconstructed a
+substantial body of primary, or propositional, logic and have
+begun to push logical theory beyond the boundaries of traditional
+Aristotelian syllogistic.
+
+\begin{whiteboard}
+\[
+\boxed{
+\begin{array}{c}
+\text{Roman logic: preserve, translate, combine}\\
+\downarrow\\
+\text{Medieval logic: recover, analyze, innovate}
+\end{array}
+}
+\]
+
+\[
+\textbf{Main themes:}
+\]
+
+\[
+\begin{array}{c}
+\text{language}\\
+\text{meaning and reference}\\
+\text{quantification}\\
+\text{paradox}\\
+\text{consequence}
+\end{array}
+\]
+\end{whiteboard}
+
+% ============================================================
+% PART I
+% ============================================================
+
+\part{From Cicero to Boethius}
+
+% ============================================================
+\section{Two Ancient Traditions Become One}
+% ============================================================
+
+After Aristotle and Chrysippus, the Peripatetic and Stoic
+traditions did not remain permanently separate.
+
+Later ancient writers discussed them together, borrowed
+terminology and doctrines from both, and gradually produced a
+mixed logical tradition.
+
+The result was not always a clean synthesis.
+
+The Kneales emphasize that what developed might be described as a
+fusion, but in some cases also as a confusion, of originally
+distinct systems.
+
+The historical importance of this process is enormous because the
+mixed tradition becomes the logical inheritance passed to the
+Latin Middle Ages.
+
+\begin{whiteboard}
+\[
+\begin{array}{c}
+\textbf{ARISTOTLE}\\
+\text{term / syllogistic logic}
+\end{array}
+\qquad
++
+\qquad
+\begin{array}{c}
+\textbf{CHRYSIPPUS}\\
+\text{propositional / Stoic logic}
+\end{array}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{late ancient debate and mixture}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{\textbf{BOETHIUS}}
+\]
+
+\[
+\text{fusion --- or sometimes confusion}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Cicero: Translator More Than Innovator}
+% ============================================================
+
+Cicero is not important here because he created a new formal
+system.
+
+His importance lies primarily in transmission.
+
+Greek logical terminology had to be rendered into Latin.
+
+Cicero helped create a Latin philosophical vocabulary that later
+thinkers could inherit.
+
+This matters because medieval logical work in western Europe
+would be conducted primarily in Latin.
+
+One important example is the development of the word
+\latin{propositio}.
+
+Its later medieval meaning as a proposition or statement was not
+simply fixed from the beginning; Latin technical vocabulary
+developed historically.
+
+\begin{whiteboard}
+\[
+\textbf{CICERO}
+\]
+
+\[
+\text{Greek logical vocabulary}
+\longrightarrow
+\text{Latin logical vocabulary}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{medieval logical language}
+\]
+
+\[
+\boxed{\text{Cicero: TRANSMISSION $>$ INNOVATION}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Topics and Formal Validity}
+% ============================================================
+
+Cicero's treatment of topics preserves an older distinction
+between two questions.
+
+The first question is practical:
+
+\begin{center}
+Where can I \emph{find} an argument?
+\end{center}
+
+The second is logical:
+
+\begin{center}
+Does the argument actually follow?
+\end{center}
+
+Topics are associated primarily with finding appropriate lines of
+argument.
+
+Formal dialectic is concerned with whether a proposed inference
+is valid.
+
+Cicero's interests remain closely connected with rhetoric and
+practical argumentation.
+
+This reminds us that ancient and Roman logic is not yet always
+separated sharply from the art of persuasive discourse.
+
+\begin{whiteboard}
+\[
+\textbf{TWO QUESTIONS}
+\]
+
+\[
+\begin{array}{ll}
+1. & \text{How do we FIND an argument?}\\
+   & \rightarrow \text{TOPICS}\\[0.6em]
+2. & \text{Is the argument VALID?}\\
+   & \rightarrow \text{DIALECTIC}
+\end{array}
+\]
+
+\[
+\boxed{\text{Cicero emphasizes argument-discovery.}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{The Survival of Stoic Inferential Logic}
+% ============================================================
+
+The Stoic tradition did not disappear after Chrysippus.
+
+Later ancient writers preserve schemes of hypothetical inference
+derived from, or related to, the earlier Stoic indemonstrables.
+
+The evidence is imperfect, but a later tradition appears to have
+expanded and rearranged the basic Chrysippean material into a
+larger set of hypothetical rules.
+
+The important historical point is not the exact reconstruction of
+every rule.
+
+It is that propositional patterns of inference continued to
+circulate alongside Aristotelian syllogistic.
+
+\begin{whiteboard}
+\[
+\text{Chrysippus}
+\]
+
+\[
+5\ \text{basic indemonstrables}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{later expansion / rearrangement}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+7\ \text{hypothetical rules}
+\]
+
+\[
+\boxed{\text{Stoic primary logic survives.}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Galen: Two Logical Traditions}
+% ============================================================
+
+Galen explicitly works with material from both the Aristotelian
+and Stoic traditions.
+
+Rather than treating one tradition as simply replacing the
+other, he recognizes that they have different characteristic
+applications.
+
+Categorical syllogistic is naturally associated with geometrical
+reasoning.
+
+Hypothetical reasoning is especially useful in metaphysical and
+dialectical contexts.
+
+This is an important historical moment because the two systems are
+no longer merely rivals.
+
+They can be understood as complementary logical tools.
+
+\begin{whiteboard}
+\[
+\textbf{GALEN}
+\]
+
+\[
+\begin{array}{c}
+\text{CATEGORICAL LOGIC}\\
+\downarrow\\
+\text{geometry}
+\end{array}
+\qquad
+\begin{array}{c}
+\text{HYPOTHETICAL LOGIC}\\
+\downarrow\\
+\text{metaphysical dialectic}
+\end{array}
+\]
+
+\[
+\boxed{\text{We need BOTH kinds of reasoning.}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Relational Reasoning: A Road Not Yet Taken}
+% ============================================================
+
+Galen also notices arguments whose validity depends on relations
+between objects.
+
+Consider:
+
+\[
+\text{Theon has twice as much as Dio.}
+\]
+
+\[
+\text{Philo has twice as much as Theon.}
+\]
+
+\[
+\therefore \text{Philo has four times as much as Dio.}
+\]
+
+Or:
+
+\[
+\text{Sophroniscus is father of Socrates.}
+\]
+
+\[
+\therefore \text{Socrates is son of Sophroniscus.}
+\]
+
+These inferences cannot be represented adequately merely by
+treating whole propositions as indivisible units, and they do not
+fit neatly into traditional subject--predicate syllogistic.
+
+Their validity depends upon the internal logical structure of
+relations.
+
+Galen sees the problem, but no systematic relational logic
+follows from the insight.
+
+\begin{whiteboard}
+\[
+A = 2B
+\]
+
+\[
+C = 2A
+\]
+
+\[
+\therefore C = 4B
+\]
+
+\[
+\text{and}
+\]
+
+\[
+X\text{ is father of }Y
+\]
+
+\[
+\therefore Y\text{ is son of }X
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\text{RELATIONAL reasoning}\\
+\text{does not fit neatly into}\\
+\text{ordinary syllogistic or basic Stoic forms}
+\end{array}
+}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Porphyry and the Five Predicables}
+% ============================================================
+
+Porphyry's \textit{Isagoge} becomes one of the central works of
+medieval logical education.
+
+The famous five predicables are:
+
+\begin{enumerate}
+    \item genus,
+    \item species,
+    \item differentia,
+    \item property,
+    \item accident.
+\end{enumerate}
+
+These become known as the \latin{quinque voces}.
+
+They provide a framework for asking how predicates relate to
+subjects and how general concepts are organized.
+
+\begin{whiteboard}
+\[
+\textbf{PORPHYRY: QUINQUE VOCES}
+\]
+
+\[
+\begin{array}{c}
+\text{GENUS}\\
+\text{SPECIES}\\
+\text{DIFFERENTIA}\\
+\text{PROPERTY}\\
+\text{ACCIDENT}
+\end{array}
+\]
+
+\[
+\text{Aristotle}
+\longrightarrow
+\text{Porphyry}
+\longrightarrow
+\text{medieval curriculum}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Augustine and the \textit{Dicibile}}
+% ============================================================
+
+Augustine's logical reflections distinguish among words, thoughts,
+and things.
+
+The term \latin{dicibile} is used for what is understood through
+a word and exists as intelligible content in the mind.
+
+This is historically suggestive because it recalls the Stoic
+distinction between a linguistic expression and what that
+expression signifies.
+
+The ancient problem of propositional content therefore remains
+alive, even though the technical vocabulary has changed.
+
+\begin{whiteboard}
+\[
+\textbf{AUGUSTINE}
+\]
+
+\[
+\text{WORD}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{\latin{DICIBILE}}
+\]
+
+\[
+\text{``what is understood''}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{thought / content}
+\]
+
+\[
+\boxed{\text{possible bridge back toward the Stoic \term{lekton}}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Boethius: The Great Bridge}
+% ============================================================
+
+Boethius is the central transmitter of ancient logic to the early
+medieval Latin world.
+
+His logical translations and commentaries preserve material from
+Aristotle, Porphyry, and the later ancient logical tradition.
+
+For long periods, western students had access principally to works
+such as:
+
+\begin{itemize}
+    \item Aristotle's \textit{Categories},
+    \item Aristotle's \textit{De Interpretatione},
+    \item Porphyry's \textit{Isagoge},
+    \item Boethius' own logical works and commentaries.
+\end{itemize}
+
+Boethius is therefore not merely one author among many.
+
+He is a historical conduit between Greek antiquity and Latin
+medieval thought.
+
+\begin{whiteboard}
+\[
+\textbf{BOETHIUS}
+\]
+
+\[
+\text{GREEK ANTIQUITY}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{translations + commentaries}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{LATIN MIDDLE AGES}
+\]
+
+\[
+\boxed{\text{BOETHIUS = THE BRIDGE}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Boethius and Hypothetical Inference}
+% ============================================================
+
+Boethius helps preserve the tradition of hypothetical logic.
+
+A representative pattern is:
+
+\[
+A \rightarrow B,
+\]
+
+\[
+B \rightarrow C,
+\]
+
+therefore:
+
+\[
+A \rightarrow C.
+\]
+
+The point is historically important because the medieval West
+inherits not only categorical syllogistic but also remnants of
+propositional inference.
+
+\begin{whiteboard}
+\[
+\textbf{HYPOTHETICAL TRANSITIVITY}
+\]
+
+\[
+\begin{array}{c}
+A \rightarrow B\\
+B \rightarrow C\\
+\hline
+A \rightarrow C
+\end{array}
+\]
+
+\[
+\boxed{\text{propositional material survives in Latin logic}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Boethius and \textit{Consequentia}}
+% ============================================================
+
+Boethius distinguishes between conditionals that hold merely
+accidentally and those that involve a more natural or necessary
+connection.
+
+This helps preserve an important question:
+
+\begin{center}
+What does it mean for one thing to \emph{follow from} another?
+\end{center}
+
+The Latin vocabulary of \latin{consequentia} will become
+increasingly important in medieval logic.
+
+\begin{whiteboard}
+\[
+\textbf{CONSEQUENTIA}
+\]
+
+\[
+\begin{array}{c}
+\text{ACCIDENTAL}\\[0.3em]
+\text{vs.}\\[0.3em]
+\text{NECESSARY / NATURAL}
+\end{array}
+\]
+
+\[
+\boxed{\text{``following from'' becomes a central medieval problem}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Written, Spoken, and Mental Discourse}
+% ============================================================
+
+The later ancient tradition distinguishes three kinds of
+discourse:
+
+\begin{enumerate}
+    \item written,
+    \item spoken,
+    \item mental.
+\end{enumerate}
+
+Written signs signify spoken signs.
+
+Spoken expressions signify mental conceptions.
+
+Mental discourse is treated as more fundamental and naturally
+connected with things.
+
+This scheme becomes extremely important in medieval theories of
+mental language.
+
+\begin{whiteboard}
+\[
+\textbf{THREE KINDS OF DISCOURSE}
+\]
+
+\[
+\text{WRITTEN}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{SPOKEN}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{MENTAL}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{THINGS}
+\]
+
+\[
+\boxed{\text{logic studies signs and what signs signify}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{The Problem of Universals}
+% ============================================================
+
+Porphyry raises questions about genera and species without
+resolving them.
+
+Are universals:
+
+\begin{itemize}
+    \item realities independent of thought?
+    \item objects existing only in thought?
+    \item corporeal or incorporeal?
+    \item separate from sensible particulars or present only in them?
+\end{itemize}
+
+Boethius transmits these problems to medieval philosophy.
+
+The problem of universals therefore becomes one of the major
+points at which logic, semantics, metaphysics, and epistemology
+intersect.
+
+\begin{whiteboard}
+\[
+\textbf{THE UNIVERSALS PROBLEM}
+\]
+
+\[
+\begin{array}{c}
+\text{GENUS / SPECIES}\\[0.4em]
+\text{things?}\\
+\text{thoughts?}\\
+\text{words?}\\
+\text{incorporeal realities?}
+\end{array}
+\]
+
+\[
+\text{Porphyry asks}
+\longrightarrow
+\text{Boethius transmits}
+\longrightarrow
+\text{Middle Ages debate}
+\]
+\end{whiteboard}
+
+% ============================================================
+% PART II
+% ============================================================
+
+\part{From Alcuin to Abelard}
+
+% ============================================================
+\section{The Early Medieval Logical Library}
+% ============================================================
+
+The early medieval West does not initially possess the whole
+Aristotelian logical corpus.
+
+The principal inherited materials include:
+
+\begin{itemize}
+    \item the \textit{Categories},
+    \item \textit{De Interpretatione},
+    \item Porphyry's \textit{Isagoge},
+    \item the logical writings of Boethius.
+\end{itemize}
+
+These works later become associated with the \latin{ars vetus},
+the ``old logic.''
+
+The limited textual inheritance is important because medieval
+thinkers begin rebuilding logical study from a comparatively
+narrow collection.
+
+\begin{whiteboard}
+\[
+\textbf{EARLY MEDIEVAL LOGIC}
+\]
+
+\[
+\begin{array}{c}
+\textit{Categories}\\
+\textit{De Interpretatione}\\
+\textit{Isagoge}\\
+\text{Boethius}
+\end{array}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{\text{\latin{ARS VETUS}}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Alcuin and the Trivium}
+% ============================================================
+
+Alcuin is important less for original logical theory than for
+education.
+
+The traditional trivium is:
+
+\begin{enumerate}
+    \item grammar,
+    \item dialectic,
+    \item rhetoric.
+\end{enumerate}
+
+Dialectic thereby becomes one of the basic disciplines of higher
+intellectual training.
+
+\begin{whiteboard}
+\[
+\textbf{TRIVIUM}
+\]
+
+\[
+\begin{array}{c}
+\text{GRAMMAR}\\
+\text{DIALECTIC}\\
+\text{RHETORIC}
+\end{array}
+\]
+
+\[
+\boxed{\text{logic becomes structurally embedded in education}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Grammar and Logic}
+% ============================================================
+
+The recovery of logic occurs alongside intense study of grammar.
+
+This creates both opportunities and confusions.
+
+Medieval thinkers repeatedly ask how to distinguish:
+
+\begin{itemize}
+    \item the physical or written word,
+    \item the meaning of the word,
+    \item the thing named,
+    \item the universal associated with the term.
+\end{itemize}
+
+These questions gradually become logical and semantic problems in
+their own right.
+
+\begin{whiteboard}
+\[
+\textbf{MEDIEVAL SEMANTIC PROBLEM}
+\]
+
+\[
+\text{WORD}
+\]
+
+\[
+?
+\]
+
+\[
+\text{MEANING}
+\]
+
+\[
+?
+\]
+
+\[
+\text{THING}
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\text{Grammar + Logic}\\
+\text{can illuminate one another}\\
+\text{or confuse one another}
+\end{array}
+}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Nominalism and Realism}
+% ============================================================
+
+The proposition
+
+\[
+\text{\latin{Homo est species}}
+\]
+
+means:
+
+\begin{center}
+Man is a species.
+\end{center}
+
+But what does the subject term stand for?
+
+If a species is something real, we move toward realism.
+
+If the universal is only a word or sound, we move toward
+nominalism.
+
+Roscellin becomes associated with a strong nominalist tendency
+according to which universals are merely words or a
+\latin{flatus vocis}.
+
+Abelard rejects simple realism but also does not accept a crude
+theory in which universals are nothing but noises.
+
+\begin{whiteboard}
+\[
+\textbf{UNIVERSALS}
+\]
+
+\[
+\begin{array}{c}
+\text{REALISM}\\
+\text{universal has reality}
+\end{array}
+\]
+
+\[
+\text{vs.}
+\]
+
+\[
+\begin{array}{c}
+\text{NOMINALISM}\\
+\text{universal = word / \latin{flatus vocis}}
+\end{array}
+\]
+
+\[
+\boxed{\text{ABELARD: neither simple extreme}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{A New Intellectual Confidence}
+% ============================================================
+
+A major transformation occurs in the twelfth century.
+
+The goal is no longer merely to recover and preserve the ancients.
+
+Thinkers increasingly assume that ancient philosophy can be
+analyzed, criticized, and improved.
+
+This change in intellectual confidence is essential for
+understanding Abelard.
+
+\begin{whiteboard}
+\[
+\text{EARLY MIDDLE AGES}
+\]
+
+\[
+\text{recover the ancients}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\textbf{TWELFTH CENTURY}
+\]
+
+\[
+\text{argue with the ancients}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{\text{improve the ancients}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Anselm and Dialectical Theology}
+% ============================================================
+
+Anselm applies dialectical reasoning directly to theological
+questions.
+
+One important method is reductive reasoning.
+
+Suppose the denial of a proposition.
+
+If that supposition produces an impossibility or contradiction,
+reject the denial.
+
+Schematically:
+
+\[
+\neg P \rightarrow \bot
+\]
+
+therefore:
+
+\[
+P.
+\]
+
+The important point for the history of logic is methodological:
+logical patterns inherited from antiquity are now being used
+systematically in theological argument.
+
+\begin{whiteboard}
+\[
+\textbf{ANSELM}
+\]
+
+\[
+\text{suppose }\neg P
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{derive contradiction}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{P}
+\]
+
+\[
+\text{ancient dialectical forms}
+\rightarrow
+\text{medieval theology}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{The Scholastic \textit{Quaestio}}
+% ============================================================
+
+Abelard's \textit{Sic et Non} exemplifies a style of inquiry that
+becomes characteristic of scholastic intellectual life.
+
+One begins with apparently conflicting claims or authorities.
+
+The task is not simply to choose one side immediately.
+
+Instead one must identify distinctions that allow the apparent
+contradiction to be analyzed.
+
+\begin{whiteboard}
+\[
+\textbf{SCHOLASTIC QUAESTIO}
+\]
+
+\[
+\text{PRO}
+\]
+
+\[
+\text{vs.}
+\]
+
+\[
+\text{CONTRA}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{DISTINCTIONS}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{\text{RESOLUTION}}
+\]
+
+\[
+\text{Reason advances through organized disputation.}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Abelard as an Innovator}
+% ============================================================
+
+Abelard is not merely a compiler.
+
+His logical work shows confidence that the ancient tradition is
+incomplete and that further discoveries can be made.
+
+His \textit{Dialectica} therefore marks an important transition
+from recovery to active development.
+
+\begin{whiteboard}
+\[
+\textbf{ABELARD}
+\]
+
+\[
+\boxed{\text{Ancient logic} \neq \text{finished logic}}
+\]
+
+\[
+\text{Logic remains a field of discovery.}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{What Is True or False?}
+% ============================================================
+
+Abelard defines a proposition as discourse signifying truth or
+falsity.
+
+Yet he recognizes that the fundamental concern of logic cannot be
+merely the physical utterance or written sentence.
+
+A proposition is logically interesting because of what it puts
+forward as being the case.
+
+Thus we need to distinguish the propositional sign from what is
+expressed by the sign.
+
+\begin{whiteboard}
+\[
+\textbf{ABELARD}
+\]
+
+\[
+\text{PROPOSITION-SIGN}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{expresses}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{WHAT IS THE CASE}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{TRUE / FALSE}
+\]
+
+\[
+\boxed{\text{truth concerns propositional content}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{The \textit{Dictum}}
+% ============================================================
+
+Abelard uses the term \latin{dictum} for what is expressed by a
+proposition.
+
+For example:
+
+\[
+\text{Socrates is a man}
+\]
+
+expresses:
+
+\[
+\text{Socrates' being-a-man.}
+\]
+
+But the \latin{dictum} is not simply another ordinary object
+alongside Socrates and other things.
+
+The distinction is one of the important medieval attempts to
+understand propositional content.
+
+\begin{whiteboard}
+\[
+\text{``Socrates is a man''}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\textbf{\latin{DICTUM}}
+\]
+
+\[
+\text{Socrates' being-a-man}
+\]
+
+\[
+\boxed{\text{what is expressed} \neq \text{another ordinary thing}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{The Copula}
+% ============================================================
+
+Abelard gives special logical attention to the verb \latin{est}.
+
+In a proposition such as:
+
+\[
+\text{Socrates is a man}
+\]
+
+the word ``is'' functions as a copula joining subject and
+predicate.
+
+It should not automatically be understood as an independent
+assertion of existence.
+
+This distinction is important because otherwise every use of the
+copula would appear to commit the speaker to the existence of the
+subject in a way that ordinary predication does not.
+
+\begin{whiteboard}
+\[
+\text{Socrates \textbf{IS} a man}
+\]
+
+\[
+\hspace{0.4in}\uparrow
+\]
+
+\[
+\textbf{COPULA}
+\]
+
+\[
+\boxed{\text{copula} \neq \text{independent assertion of existence}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Toward Supposition Theory}
+% ============================================================
+
+A central medieval question becomes:
+
+\begin{center}
+What does a term stand for in a proposition?
+\end{center}
+
+Abelard's semantic analysis helps prepare the way for the later
+theory of \latin{suppositio terminorum}.
+
+The same word can perform different logical roles in different
+contexts.
+
+The later medievals will turn this insight into an elaborate
+technical theory.
+
+\begin{whiteboard}
+\[
+\textbf{TERM IN A PROPOSITION}
+\]
+
+\[
+\boxed{\text{What does it stand for HERE?}}
+\]
+
+\[
+\text{ABELARD}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{\latin{SUPPOSITIO TERMINORUM}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Negation Has Scope}
+% ============================================================
+
+Abelard sees that negation can apply to a whole proposition rather
+than merely to one term inside it.
+
+Compare:
+
+\[
+\text{Not every man is white}
+\]
+
+with:
+
+\[
+\text{Some man is not white.}
+\]
+
+The two should not simply be treated as identical without
+examining assumptions about existence and quantification.
+
+This is a major step toward explicit analysis of logical scope.
+
+\begin{whiteboard}
+\[
+\textbf{SCOPE OF NEGATION}
+\]
+
+\[
+\neg[\text{Every man is white}]
+\]
+
+\[
+\neq \text{ automatically}
+\]
+
+\[
+\text{Some man is }\neg\text{ white}
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\text{negation of the WHOLE}\\
+\text{must be distinguished from}\\
+\text{negation INSIDE the proposition}
+\end{array}
+}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Existential Import and the Square}
+% ============================================================
+
+Abelard worries about the traditional square of opposition
+because he takes universal affirmative propositions to carry
+existential import.
+
+Consider:
+
+\[
+\text{Every man is a man.}
+\]
+
+If there are no men, should this still count as true?
+
+Abelard's answer is no.
+
+This shows that the traditional relations among quantified
+propositions contain assumptions about existence that must be
+made explicit.
+
+\begin{whiteboard}
+\[
+\textbf{EXISTENTIAL IMPORT}
+\]
+
+\[
+\text{Every man is a man.}
+\]
+
+\[
+\text{Suppose: NO MEN EXIST}
+\]
+
+\[
+\text{True or false?}
+\]
+
+\[
+\boxed{\text{ABELARD: FALSE}}
+\]
+
+\[
+\text{The traditional square contains existential assumptions.}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Quantifiers as Logical Operators}
+% ============================================================
+
+Abelard explicitly analyzes the signs of quantity:
+
+\[
+\latin{omnis},
+\qquad
+\latin{quidam},
+\qquad
+\latin{nullus}.
+\]
+
+That is:
+
+\[
+\text{every},
+\qquad
+\text{some},
+\qquad
+\text{no}.
+\]
+
+The logical form of a proposition depends in part on how these
+expressions determine the range of the subject term.
+
+\begin{whiteboard}
+\[
+\textbf{SIGNA QUANTITATIS}
+\]
+
+\[
+\begin{array}{rcl}
+\latin{OMNIS} &\rightarrow& \text{EVERY}\\
+\latin{QUIDAM} &\rightarrow& \text{SOME}\\
+\latin{NULLUS} &\rightarrow& \text{NO}
+\end{array}
+\]
+
+\[
+\boxed{\text{logical form depends on quantifier behavior}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Modal Scope}
+% ============================================================
+
+Abelard also distinguishes two ways modal language can operate.
+
+Compare:
+
+\[
+\text{It is possible that no man is white}
+\]
+
+with:
+
+\[
+\text{No man is possibly white.}
+\]
+
+In the first case, possibility applies to an entire proposition.
+
+In the second, the modal expression appears within the
+predication.
+
+This anticipates the later distinction between modality
+\latin{de dicto} and modality \latin{de re}.
+
+\begin{whiteboard}
+\[
+\textbf{MODAL SCOPE}
+\]
+
+\[
+\text{POSSIBLE }[\text{No man is white}]
+\]
+
+\[
+\neq
+\]
+
+\[
+\text{No man is }[\text{POSSIBLY white}]
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\text{later terminology:}\\
+\latin{DE DICTO}\quad \text{vs.}\quad \latin{DE RE}
+\end{array}
+}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Abelard's Theory of Consequence}
+% ============================================================
+
+For Abelard, a satisfactory conditional expresses a necessary
+connection.
+
+He speaks of \latin{necessitas consecutionis}.
+
+He distinguishes arguments whose validity is secured by their
+formal arrangement from arguments that require information about
+the particular things denoted by their terms.
+
+The contrast can be expressed as structure versus special facts
+about the terms.
+
+\begin{whiteboard}
+\[
+\textbf{ABELARD: CONSEQUENCE}
+\]
+
+\[
+\begin{array}{c}
+\text{FORMAL / PERFECT}\\
+\text{truth from STRUCTURE}
+\end{array}
+\]
+
+\[
+\text{vs.}
+\]
+
+\[
+\begin{array}{c}
+\text{IMPERFECT}\\
+\text{needs facts about TERMS / THINGS}
+\end{array}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{The Paradox of Implication}
+% ============================================================
+
+Suppose the antecedent of a conditional is impossible.
+
+For example:
+
+\[
+\text{Socrates is a stone.}
+\]
+
+Then the combination:
+
+\[
+\text{Socrates is a stone and Socrates is not an ass}
+\]
+
+is itself impossible.
+
+This makes it tempting to say:
+
+\[
+\text{If Socrates is a stone, then Socrates is an ass.}
+\]
+
+But Abelard resists treating such a conditional as expressing a
+genuine intrinsic connection.
+
+For strict consequence, the antecedent should require the
+consequent \latin{ex se ipso}, from itself.
+
+\begin{whiteboard}
+\[
+\textbf{PARADOX OF IMPLICATION}
+\]
+
+\[
+\text{Impossible }P
+\]
+
+\[
+\text{Does }P \rightarrow Q
+\]
+
+\[
+\text{hold for ANY }Q?
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\text{ABELARD: not in the strict sense}\\
+\text{Antecedent must require consequent intrinsically}
+\end{array}
+}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Abelard's Inferential Rules}
+% ============================================================
+
+Abelard explicitly works with several familiar patterns.
+
+\subsection*{Modus Ponens}
+
+\[
+P \rightarrow Q
+\]
+
+\[
+P
+\]
+
+\[
+\therefore Q
+\]
+
+\subsection*{Modus Tollens}
+
+\[
+P \rightarrow Q
+\]
+
+\[
+\neg Q
+\]
+
+\[
+\therefore \neg P
+\]
+
+\subsection*{Transitivity}
+
+\[
+P \rightarrow Q
+\]
+
+\[
+Q \rightarrow R
+\]
+
+\[
+\therefore P \rightarrow R
+\]
+
+\begin{whiteboard}
+\[
+\textbf{ABELARD}
+\]
+
+\[
+\frac{P\rightarrow Q \qquad P}{Q}
+\]
+
+\[
+\frac{P\rightarrow Q \qquad \neg Q}{\neg P}
+\]
+
+\[
+\frac{P\rightarrow Q \qquad Q\rightarrow R}{P\rightarrow R}
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\text{modus ponens}\\
+\text{modus tollens}\\
+\text{transitivity}
+\end{array}
+}
+\]
+\end{whiteboard}
+
+% ============================================================
+% PART III
+% ============================================================
+
+\part{The Logic of the Universities}
+
+% ============================================================
+\section{The \textit{Ars Nova}}
+% ============================================================
+
+By the middle of the twelfth century, much more of Aristotle's
+logical corpus becomes available in Latin.
+
+The newly recovered portions of the \textit{Organon} become known
+as the \latin{ars nova}.
+
+The older core remains the \latin{ars vetus}.
+
+The result is a greatly expanded logical curriculum.
+
+\begin{whiteboard}
+\[
+\textbf{\latin{ARS VETUS}}
+\]
+
+\[
++
+\]
+
+\[
+\textbf{\latin{ARS NOVA}}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{\text{UNIVERSITY LOGIC}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Logic Becomes a University Discipline}
+% ============================================================
+
+Logic becomes central to the arts curriculum at universities such
+as Paris and Oxford.
+
+Its characteristic forms include:
+
+\begin{itemize}
+    \item lectures,
+    \item commentaries,
+    \item \latin{quaestiones},
+    \item disputations,
+    \item handbooks and \latin{summulae}.
+\end{itemize}
+
+Logical reasoning is no longer merely something read in ancient
+texts.
+
+It is a practiced academic discipline.
+
+\begin{whiteboard}
+\[
+\textbf{MEDIEVAL UNIVERSITY LOGIC}
+\]
+
+\[
+\text{LECTURE}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{\latin{QUAESTIO}}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{DISPUTATION}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{\text{FORMAL TRAINING}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Sophisms as Logical Laboratories}
+% ============================================================
+
+The recovery of Aristotle's \textit{De Sophisticis Elenchis}
+stimulates an enormous interest in sophisms.
+
+A \latin{sophisma} can be used as a deliberately difficult case.
+
+The point is not merely to avoid mistakes.
+
+The puzzle forces the logician to identify ambiguity, scope,
+reference, and inference patterns.
+
+Sophisms therefore function as intellectual laboratories.
+
+\begin{whiteboard}
+\[
+\textbf{SOPHISMA}
+\]
+
+\[
+\text{construct a difficult case}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{force distinctions}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{test logical theory}
+\]
+
+\[
+\boxed{\text{logical puzzle = laboratory for analysis}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{\textit{Insolubilia}: The Liar Returns}
+% ============================================================
+
+Variants of the Liar paradox become known as
+\latin{insolubilia}.
+
+A simple example is:
+
+\[
+\text{``This proposition is false.''}
+\]
+
+The medievals recognize that the difficulty involves a peculiar
+kind of self-reference.
+
+Different solutions are proposed, including:
+
+\begin{itemize}
+    \item \latin{cassatio},
+    \item \latin{restrictio},
+    \item solution \latin{secundum quid et simpliciter}.
+\end{itemize}
+
+\latin{Cassatio} attempts to deny that the problematic expression
+successfully states anything.
+
+\latin{Restrictio} restricts the range of reference in order to
+block the vicious self-reference.
+
+\begin{whiteboard}
+\[
+\textbf{\latin{INSOLUBILIA}}
+\]
+
+\[
+\text{``This proposition is false.''}
+\]
+
+\[
+\begin{array}{c}
+\latin{CASSATIO}\\
+\latin{RESTRICTIO}\\
+\latin{SECUNDUM\ QUID\ /\ SIMPLICITER}
+\end{array}
+\]
+
+\[
+\boxed{\text{self-reference becomes a technical logical problem}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{\textit{Syncategoremata}}
+% ============================================================
+
+Medieval logicians write special treatises on expressions that do
+not ordinarily function as terms but are essential to logical
+structure.
+
+Examples include:
+
+\[
+\text{and,\ or,\ not,\ if,\ every,\ some,\ only,\ except.}
+\]
+
+These are \latin{syncategoremata}.
+
+The important insight is that logical form can be controlled by
+very small pieces of language.
+
+\begin{whiteboard}
+\[
+\textbf{\latin{SYNCATEGOREMATA}}
+\]
+
+\[
+\begin{array}{c}
+\text{AND}\\
+\text{OR}\\
+\text{NOT}\\
+\text{IF}\\
+\text{EVERY}\\
+\text{SOME}\\
+\text{ONLY}\\
+\text{EXCEPT}
+\end{array}
+\]
+
+\[
+\boxed{\text{small words --- large effects on LOGICAL FORM}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{\textit{Obligationes}}
+% ============================================================
+
+An \latin{obligatio} is a regulated disputational situation.
+
+A participant agrees to an assumption or set of conditions and
+must then answer subsequent questions consistently within that
+framework.
+
+This turns logical disputation into a rule-governed exercise.
+
+It continues the ancient interest in dialectical debate but with a
+more elaborate formal structure.
+
+\begin{whiteboard}
+\[
+\textbf{\latin{OBLIGATIONES}}
+\]
+
+\[
+\text{assume }P
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{conduct dispute}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{maintain consistency}
+\]
+
+\[
+\boxed{\text{logic as a rule-governed dialectical game}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{William of Shyreswood and Peter of Spain}
+% ============================================================
+
+William of Shyreswood's \textit{Introductiones in Logicam}
+organizes material on:
+
+\begin{itemize}
+    \item propositions,
+    \item predicables,
+    \item syllogisms,
+    \item dialectical topics,
+    \item properties of terms,
+    \item fallacies.
+\end{itemize}
+
+Peter of Spain's \textit{Summulae Logicales} becomes an even more
+influential logical handbook.
+
+The university manuals combine inherited Aristotelian doctrine
+with specifically medieval developments.
+
+\begin{whiteboard}
+\[
+\textbf{HIGH MEDIEVAL MANUALS}
+\]
+
+\[
+\text{William of Shyreswood}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{Peter of Spain}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{\latin{SUMMULAE} tradition}
+\]
+
+\[
+\boxed{\text{ancient logic + medieval innovations}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Mental Language}
+% ============================================================
+
+The theory of written, spoken, and mental discourse receives new
+development under the influence of Aristotle and Arabic
+philosophy.
+
+Mental terms are treated as \latin{intentiones}, natural signs or
+concepts in the soul.
+
+This creates a theory in which conventional spoken and written
+signs are subordinated to a more fundamental mental language.
+
+\begin{whiteboard}
+\[
+\textbf{MENTAL LANGUAGE}
+\]
+
+\[
+\text{WRITTEN SIGNS}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{SPOKEN SIGNS}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{MENTAL SIGNS}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{THINGS}
+\]
+
+\[
+\boxed{\latin{intentio} = \text{mental sign / concept}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Ockham's Systematic Logic}
+% ============================================================
+
+William Ockham attempts to organize the entire subject of logic.
+
+His \textit{Summa Totius Logicae} is divided broadly into:
+
+\begin{enumerate}
+    \item terms,
+    \item propositions,
+    \item arguments.
+\end{enumerate}
+
+Within this framework he incorporates both traditional logical
+material and specifically medieval developments.
+
+\begin{whiteboard}
+\[
+\textbf{OCKHAM}
+\]
+
+\[
+\begin{array}{lll}
+\text{BOOK I} &\rightarrow& \text{TERMS}\\
+\text{BOOK II} &\rightarrow& \text{PROPOSITIONS}\\
+\text{BOOK III} &\rightarrow& \text{ARGUMENTS}
+\end{array}
+\]
+
+\[
+\boxed{\text{ancient inheritance + medieval logical theory}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{The Fourteenth-Century Logical Culture}
+% ============================================================
+
+After Ockham, important figures include:
+
+\begin{itemize}
+    \item Walter Burleigh,
+    \item Jean Buridan,
+    \item Richard Swineshead,
+    \item Albert of Saxony,
+    \item Marsilius of Inghen,
+    \item William Heytesbury,
+    \item Ralph Strode,
+    \item Richard Ferrybridge.
+\end{itemize}
+
+This is a period of exceptionally intense logical activity.
+
+Medieval thinkers continue refining the theories of terms,
+consequences, modality, sophisms, paradox, and disputation.
+
+\begin{whiteboard}
+\[
+\textbf{FOURTEENTH-CENTURY LOGIC}
+\]
+
+\[
+\begin{array}{c}
+\text{Burleigh}\\
+\text{Buridan}\\
+\text{Swineshead}\\
+\text{Albert of Saxony}\\
+\text{Heytesbury}\\
+\text{Strode}\\
+\text{others}
+\end{array}
+\]
+
+\[
+\boxed{\text{one of the most intensive periods of logical study}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{\textit{Via Antiqua} and \textit{Via Moderna}}
+% ============================================================
+
+The later medieval intellectual world develops competing
+educational tendencies.
+
+The \latin{via antiqua} is associated with older Aristotelian and
+realist approaches.
+
+The \latin{via moderna} is associated more strongly with terminist
+and nominalist developments and with newer kinds of logical
+analysis.
+
+The difference eventually becomes institutional.
+
+\begin{whiteboard}
+\[
+\textbf{\latin{VIA ANTIQUA}}
+\]
+
+\[
+\text{realism + older Aristotelian emphasis}
+\]
+
+\[
+\text{vs.}
+\]
+
+\[
+\textbf{\latin{VIA MODERNA}}
+\]
+
+\[
+\text{terminism / nominalist tendency}
+\]
+
+\[
+\text{newer logical analysis}
+\]
+\end{whiteboard}
+
+% ============================================================
+% PART IV
+% ============================================================
+
+\part{\textit{Proprietates Terminorum}}
+
+% ============================================================
+\section{The Properties of Terms}
+% ============================================================
+
+The theory of the \latin{proprietates terminorum} develops in the
+later twelfth century and becomes one of the most distinctive
+areas of medieval logic.
+
+The basic question is:
+
+\begin{center}
+What logical role does a word or phrase perform when it occurs as
+a term in a proposition?
+\end{center}
+
+William of Shyreswood gives four principal properties:
+
+\begin{enumerate}
+    \item \latin{significatio},
+    \item \latin{suppositio},
+    \item \latin{copulatio},
+    \item \latin{appellatio}.
+\end{enumerate}
+
+\begin{whiteboard}
+\[
+\textbf{\latin{PROPRIETATES TERMINORUM}}
+\]
+
+\[
+\begin{array}{c}
+\latin{SIGNIFICATIO}\\
+\latin{SUPPOSITIO}\\
+\latin{COPULATIO}\\
+\latin{APPELLATIO}
+\end{array}
+\]
+
+\[
+\boxed{\text{What is a term doing IN THIS PROPOSITION?}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{\textit{Significatio} and \textit{Suppositio}}
+% ============================================================
+
+A useful introductory distinction is:
+
+\[
+\latin{significatio}
+\]
+
+concerns what a term means or signifies.
+
+\[
+\latin{suppositio}
+\]
+
+concerns what the term stands for in a particular propositional
+context.
+
+The same expression can retain a general meaning while standing
+for different kinds of things in different occurrences.
+
+\begin{whiteboard}
+\[
+\textbf{\latin{SIGNIFICATIO}}
+\]
+
+\[
+\text{``What does the word MEAN?''}
+\]
+
+\[
+\textbf{\latin{SUPPOSITIO}}
+\]
+
+\[
+\text{``What does it stand for HERE?''}
+\]
+
+\[
+\boxed{\text{meaning} \neq \text{contextual reference}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Three Core Types of Supposition}
+% ============================================================
+
+The full medieval taxonomies are extremely elaborate.
+
+For introductory purposes, three central cases are especially
+useful.
+
+\subsection*{Material Supposition}
+
+The expression stands for the linguistic sign itself.
+
+Example:
+
+\[
+\text{``Man'' is a word.}
+\]
+
+\subsection*{Simple Supposition}
+
+The expression stands for a universal, concept, or associated
+mental sign.
+
+Example:
+
+\[
+\text{Man is a species.}
+\]
+
+\subsection*{Personal Supposition}
+
+The expression stands for the individual things falling under the
+term.
+
+Example:
+
+\[
+\text{Every man is mortal.}
+\]
+
+\begin{whiteboard}
+\[
+\textbf{THREE CORE CASES}
+\]
+
+\[
+\begin{array}{ll}
+1. & \text{MATERIAL}\\
+   & \text{``man'' as linguistic sign}\\[0.5em]
+2. & \text{SIMPLE}\\
+   & \text{man as concept / universal}\\[0.5em]
+3. & \text{PERSONAL}\\
+   & \text{individual men}
+\end{array}
+\]
+
+\[
+\boxed{\text{same term --- different logical role}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Personal Supposition and Quantification}
+% ============================================================
+
+Within personal supposition, medieval thinkers distinguish
+different ways in which a common term ranges over individuals.
+
+A simplified teaching scheme is:
+
+\begin{itemize}
+    \item determinate,
+    \item confused,
+    \item distributive.
+\end{itemize}
+
+These distinctions function partly as a substitute for what
+modern logic handles through explicit quantifier notation.
+
+\begin{whiteboard}
+\[
+\textbf{PERSONAL SUPPOSITION}
+\]
+
+\[
+\begin{array}{c}
+\text{DETERMINATE}\\
+\rightarrow \text{some particular member}
+\end{array}
+\]
+
+\[
+\begin{array}{c}
+\text{CONFUSED}\\
+\rightarrow \text{range not individually fixed}
+\end{array}
+\]
+
+\[
+\begin{array}{c}
+\text{DISTRIBUTIVE}\\
+\rightarrow \text{all relevant members}
+\end{array}
+\]
+
+\[
+\boxed{\text{medieval substitute for parts of quantification theory}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Ockham's Nominalist Revision}
+% ============================================================
+
+William of Shyreswood and Peter of Spain work within a framework
+in which a general term can be said to signify a common form or
+universal.
+
+Ockham rejects the existence of such a universal entity.
+
+For him, signs ultimately signify individual things.
+
+This makes \latin{suppositio} increasingly central to semantic
+theory.
+
+\begin{whiteboard}
+\[
+\textbf{WILLIAM / PETER}
+\]
+
+\[
+\text{general term}
+\rightarrow
+\text{common form / universal}
+\]
+
+\[
+\text{vs.}
+\]
+
+\[
+\textbf{OCKHAM}
+\]
+
+\[
+\text{general term}
+\rightarrow
+\text{individual things}
+\]
+
+\[
+\boxed{\text{\latin{suppositio} becomes more fundamental}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Burleigh's Objection}
+% ============================================================
+
+Walter Burleigh objects to Ockham's account of signification.
+
+Suppose the word ``man'' directly meant Socrates, Plato, and the
+other individual men.
+
+Then learning the meaning of the word ``man'' should require
+learning that the word applies to those individuals.
+
+But someone can understand the word ``man'' without knowing
+Socrates.
+
+Therefore the meaning of a general term cannot simply be
+identified with a list of individuals.
+
+\begin{whiteboard}
+\[
+\textbf{BURLEIGH AGAINST OCKHAM}
+\]
+
+\[
+\text{If ``man'' meant}
+\]
+
+\[
+\text{Socrates + Plato + }\cdots
+\]
+
+\[
+\text{then learning ``man''}
+\]
+
+\[
+\text{would require knowing Socrates.}
+\]
+
+\[
+\text{But it does not.}
+\]
+
+\[
+\boxed{\text{MEANING} \neq \text{list of individuals}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Distribution}
+% ============================================================
+
+The doctrine of distribution is the most familiar surviving part
+of medieval term theory.
+
+A term is distributed when it is taken for all the individuals to
+which it applies.
+
+For example:
+
+\[
+\text{Every man is mortal.}
+\]
+
+The subject term ``man'' is taken universally.
+
+Later traditional syllogistic develops two famous rules:
+
+\begin{enumerate}
+    \item The middle term must be distributed at least once in the premises.
+    \item A term may not be distributed in the conclusion unless it was distributed in a premise.
+\end{enumerate}
+
+\begin{whiteboard}
+\[
+\textbf{DISTRIBUTION}
+\]
+
+\[
+\text{Every MAN is mortal.}
+\]
+
+\[
+\text{MAN}
+\rightarrow
+\text{taken for every man}
+\]
+
+\[
+\boxed{
+\begin{array}{l}
+1.\ \text{Middle term distributed at least once.}\\
+2.\ \text{No new distribution in the conclusion.}
+\end{array}
+}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{What Term Theory Was Trying to Do}
+% ============================================================
+
+The theory of the properties of terms combines several different
+projects.
+
+First, it attempts a general theory of language involving meaning,
+application, and reference.
+
+Second, it analyzes the detailed behavior of the natural language
+used by philosophers.
+
+Third, it develops rules for quantified inference.
+
+These are all respectable projects, but they do not necessarily
+belong inside one single theory.
+
+\begin{whiteboard}
+\[
+\textbf{\latin{PROPRIETATES TERMINORUM}}
+\]
+
+\[
+\begin{array}{ll}
+1. & \text{theory of LANGUAGE}\\
+   & \text{meaning / reference}\\[0.5em]
+2. & \text{analysis of logical IDIOMS}\\[0.5em]
+3. & \text{rules of QUANTIFICATION}
+\end{array}
+\]
+
+\[
+\boxed{\text{valuable projects --- but not naturally one theory}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{The Ambiguity of \textit{Suppositio}}
+% ============================================================
+
+The basic distinction between signification and supposition is
+useful.
+
+The difficulty is that the word \latin{suppositio} becomes
+overloaded.
+
+Compare:
+
+\[
+\text{``Socrates'' stands for Socrates}
+\]
+
+with:
+
+\[
+\text{``man'' stands for Socrates, Plato, and others.}
+\]
+
+These are not obviously the same semantic relation.
+
+Yet both can be described using the language of ``standing for.''
+
+\begin{whiteboard}
+\[
+\textbf{PROBLEM WITH \latin{SUPPOSITIO}}
+\]
+
+\[
+\text{1. A name} \rightarrow \text{Socrates}
+\]
+
+\[
+\text{2. MAN} \rightarrow \text{Socrates, Plato, }\ldots
+\]
+
+\[
+\text{Both called: ``stands for''}
+\]
+
+\[
+\boxed{\text{but these are different semantic relations}}
+\]
+\end{whiteboard}
+
+% ============================================================
+% PART V
+% ============================================================
+
+\part{\textit{Consequentiae}}
+
+% ============================================================
+\section{What Is a \textit{Consequentia}?}
+% ============================================================
+
+The later medieval theory of \latin{consequentiae} develops from
+earlier work associated with Abelard, although the exact
+historical chain is not completely known.
+
+The central question is:
+
+\begin{center}
+Under what conditions does one proposition validly follow from
+another?
+\end{center}
+
+This broadens logical investigation beyond the traditional theory
+of categorical syllogism.
+
+\begin{whiteboard}
+\[
+\textbf{\latin{CONSEQUENTIA}}
+\]
+
+\[
+P
+\]
+
+\[
+\downarrow
+\]
+
+\[
+Q
+\]
+
+\[
+\boxed{\text{WHEN DOES }Q\text{ FOLLOW FROM }P\text{?}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Two Paradoxes of Consequence}
+% ============================================================
+
+Two medieval principles can appear surprising.
+
+First:
+
+\[
+\text{anything follows from the impossible.}
+\]
+
+In modern notation:
+
+\[
+\bot \vdash P.
+\]
+
+Second:
+
+\[
+\text{the necessary follows from anything.}
+\]
+
+If \(N\) is necessary, then:
+
+\[
+P \vdash N.
+\]
+
+The intuitive explanation concerns the impossibility of a
+counterexample in which the antecedent is true and the consequent
+false.
+
+\begin{whiteboard}
+\[
+\textbf{PARADOXES OF CONSEQUENCE}
+\]
+
+\[
+\text{IMPOSSIBLE}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{ANYTHING}
+\]
+
+\[
+\text{and}
+\]
+
+\[
+\text{ANYTHING}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{NECESSARY TRUTH}
+\]
+
+\[
+\boxed{\text{Can there be a true antecedent and false consequent?}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Formal and Material Consequence}
+% ============================================================
+
+A particularly important medieval distinction separates formal
+from material consequence.
+
+A consequence is formal when its validity remains intact under
+suitable replacement of its non-logical terms while the logical
+structure is preserved.
+
+A material consequence depends upon the special meanings of the
+terms or upon additional facts.
+
+\begin{whiteboard}
+\[
+\textbf{FORMAL CONSEQUENCE}
+\]
+
+\[
+\text{valid under replacement}
+\]
+
+\[
+\text{while FORM stays fixed}
+\]
+
+\[
+\text{vs.}
+\]
+
+\[
+\textbf{MATERIAL CONSEQUENCE}
+\]
+
+\[
+\text{valid because of particular meanings / facts}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Substitution as a Test of Form}
+% ============================================================
+
+Consider:
+
+\[
+\text{Every }M\text{ is }L.
+\]
+
+\[
+\text{Every }S\text{ is }M.
+\]
+
+\[
+\therefore \text{Every }S\text{ is }L.
+\]
+
+Now replace \(M\), \(L\), and \(S\) with different suitable
+terms.
+
+If the argument remains valid under the substitutions, then the
+validity belongs to the structure rather than the specific
+subject matter.
+
+\begin{whiteboard}
+\[
+\textbf{FORMAL TEST}
+\]
+
+\[
+\begin{array}{c}
+\text{Every }M\text{ is }L\\
+\text{Every }S\text{ is }M\\
+\hline
+\text{Every }S\text{ is }L
+\end{array}
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\text{replace }M,L,S\\
+\text{validity survives}\\
+\Rightarrow \text{FORM carries the inference}
+\end{array}
+}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{\textit{Bona Simpliciter} and \textit{Bona Ut Nunc}}
+% ============================================================
+
+Medieval logicians also distinguish kinds of material consequence.
+
+A consequence can be good \latin{simpliciter}, because a stable
+background relation between the terms supplies what is needed.
+
+Or it can be good \latin{ut nunc}, ``as things now stand,'' because
+some contingent circumstance currently makes the inference work.
+
+Suppose:
+
+\[
+\text{Socrates is white.}
+\]
+
+Then:
+
+\[
+\text{Socrates runs}
+\]
+
+may support:
+
+\[
+\text{A white thing runs.}
+\]
+
+But this works because of the contingent fact that Socrates is
+white.
+
+\begin{whiteboard}
+\[
+\textbf{TWO MATERIAL CASES}
+\]
+
+\[
+\begin{array}{c}
+\latin{BONA SIMPLICITER}\\
+\text{stable background truth}
+\end{array}
+\]
+
+\[
+\text{vs.}
+\]
+
+\[
+\begin{array}{c}
+\latin{BONA UT NUNC}\\
+\text{true given present circumstances}
+\end{array}
+\]
+
+\[
+\text{Socrates is white}
+\]
+
+\[
+\text{Socrates runs}
+\]
+
+\[
+\therefore \text{A white thing runs}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Ockham's General Principles}
+% ============================================================
+
+Ockham gives a large set of rules governing consequence.
+
+For lecture purposes, the following family captures the central
+ideas:
+
+\begin{enumerate}
+    \item A true proposition does not validly entail a false proposition.
+    \item If \(P\) entails \(Q\), then the negation of \(Q\) entails the negation of \(P\).
+    \item If \(P\) entails \(Q\), and \(Q\) entails \(R\), then \(P\) entails \(R\).
+    \item Anything follows from the impossible.
+    \item A necessary truth follows from anything.
+\end{enumerate}
+
+\begin{whiteboard}
+\[
+\textbf{OCKHAM: GENERAL PRINCIPLES}
+\]
+
+\[
+\begin{array}{l}
+1.\ \text{TRUE does not entail FALSE}\\[0.4em]
+2.\ P\vdash Q \Rightarrow \neg Q \vdash \neg P\\[0.4em]
+3.\ P\vdash Q,\ Q\vdash R \Rightarrow P\vdash R\\[0.4em]
+4.\ \bot \vdash P\\[0.4em]
+5.\ P\vdash N \quad (N\text{ necessary})
+\end{array}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Rules Later Associated with De Morgan}
+% ============================================================
+
+Medieval logicians formulate rules corresponding to what later
+became known as De Morgan's laws.
+
+For conjunction:
+
+\[
+\neg(P\land Q)
+\leftrightarrow
+(\neg P\lor \neg Q).
+\]
+
+For disjunction:
+
+\[
+\neg(P\lor Q)
+\leftrightarrow
+(\neg P\land \neg Q).
+\]
+
+The nineteenth-century name is much later than the logical
+insight.
+
+\begin{whiteboard}
+\[
+\textbf{NEGATION RULES}
+\]
+
+\[
+\neg(P\land Q)
+\leftrightarrow
+(\neg P\lor \neg Q)
+\]
+
+\[
+\neg(P\lor Q)
+\leftrightarrow
+(\neg P\land \neg Q)
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\text{later name: De Morgan}\\
+\text{medieval rules: centuries earlier}
+\end{array}
+}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Primary Logic Re-emerges}
+% ============================================================
+
+The medieval theory of consequences contains rules involving:
+
+\begin{itemize}
+    \item conjunction,
+    \item disjunction,
+    \item negation,
+    \item conditionals,
+    \item contraposition,
+    \item transitivity.
+\end{itemize}
+
+This is precisely the territory previously identified as primary
+or propositional logic.
+
+The tradition therefore reconstructs a substantial portion of the
+logical domain earlier developed by the Stoics.
+
+\begin{whiteboard}
+\[
+\textbf{MEDIEVAL \latin{CONSEQUENTIAE}}
+\]
+
+\[
+\begin{array}{c}
+\neg\\
+\land\\
+\lor\\
+\rightarrow\\
+\text{contraposition}\\
+\text{transitivity}
+\end{array}
+\]
+
+\[
+\boxed{\text{PRIMARY / PROPOSITIONAL LOGIC}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Beyond Syllogistic: Existential Inference}
+% ============================================================
+
+Medieval writers also encounter forms of inference that move
+beyond traditional syllogistic.
+
+For example:
+
+\[
+\text{Socrates runs.}
+\]
+
+Therefore:
+
+\[
+\text{Something runs.}
+\]
+
+In modern notation:
+
+\[
+R(s)
+\]
+
+therefore:
+
+\[
+\exists x\,R(x).
+\]
+
+This is a direct connection between singular predication and
+existential quantification.
+
+\begin{whiteboard}
+\[
+\text{Socrates runs}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{Something runs}
+\]
+
+\[
+\begin{array}{c}
+R(s)\\
+\hline
+\exists x\,R(x)
+\end{array}
+\]
+
+\[
+\boxed{\text{general logic begins to exceed ordinary syllogistic}}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{The Limits of Medieval Notation}
+% ============================================================
+
+Medieval logicians investigate many difficult topics:
+
+\begin{itemize}
+    \item relations,
+    \item quantification,
+    \item scope,
+    \item modal contexts,
+    \item semantic paradox,
+    \item formal replacement,
+    \item propositional connectives.
+\end{itemize}
+
+But they do not possess a compact symbolic language adequate to
+express all of these structures with the clarity later provided by
+modern quantificational notation.
+
+The limitation is therefore not simply lack of intelligence or
+logical sophistication.
+
+They repeatedly confront problems whose solution requires a
+representational advance.
+
+\begin{whiteboard}
+\[
+\textbf{MEDIEVAL LOGICIANS HAD}
+\]
+
+\[
+\text{logical insight}
+\]
+
+\[
++
+\]
+
+\[
+\text{technical vocabulary}
+\]
+
+\[
+\textbf{BUT LACKED}
+\]
+
+\[
+\boxed{\text{adequate symbolism for quantification}}
+\]
+
+\[
+\therefore
+\]
+
+\[
+\text{further progress becomes difficult}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Comparison with Chrysippus}
+% ============================================================
+
+The later medieval writers can derive one valid consequence from
+another and use higher-order principles such as contraposition.
+
+In that respect their work recalls Chrysippus, who derived further
+valid schemata from his indemonstrables.
+
+But no surviving medieval work appears to construct a single
+highly developed deductive calculus of consequences comparable to
+a modern formal system.
+
+\begin{whiteboard}
+\[
+\textbf{CHRYSIPPUS}
+\]
+
+\[
+\text{basic schemata}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{derived schemata}
+\]
+
+\[
+\textbf{MEDIEVAL \latin{CONSEQUENTIAE}}
+\]
+
+\[
+\text{valid consequences}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{derive further consequences}
+\]
+
+\[
+\boxed{\text{but no single unified modern-style calculus}}
+\]
+\end{whiteboard}
+
+% ============================================================
+% SYNTHESIS
+% ============================================================
+
+\part{Synthesis}
+
+% ============================================================
+\section{What Changed from Rome to the High Middle Ages?}
+% ============================================================
+
+The Roman period preserves and combines ancient traditions.
+
+The early Middle Ages recover a restricted logical inheritance.
+
+The twelfth century brings renewed confidence and the work of
+Abelard.
+
+The universities then institutionalize logical training and
+generate specialized technical traditions.
+
+Two developments become especially characteristic:
+
+\begin{enumerate}
+    \item the theory of the properties of terms,
+    \item the theory of consequences.
+\end{enumerate}
+
+The first pushes toward semantics and quantification.
+
+The second pushes toward a general theory of propositional
+inference.
+
+\begin{whiteboard}
+\[
+\textbf{ROMAN PERIOD}
+\]
+
+\[
+\text{PRESERVE}
+\qquad
+\text{TRANSLATE}
+\qquad
+\text{MIX}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\textbf{EARLY MIDDLE AGES}
+\]
+
+\[
+\text{RECOVER}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\textbf{ABELARD}
+\]
+
+\[
+\text{QUESTION}
+\qquad
+\text{DISTINGUISH}
+\qquad
+\text{INNOVATE}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\textbf{HIGH MIDDLE AGES}
+\]
+
+\[
+\begin{array}{c}
+\text{SEMANTICS}\\
+\text{QUANTIFICATION}\\
+\text{PARADOX}\\
+\text{CONSEQUENCE}
+\end{array}
+\]
+\end{whiteboard}
+
+% ============================================================
+\section{Worked Board Demonstrations}
+% ============================================================
+
+\subsection*{1. Relational Inference}
+
+\[
+A=2B,
+\qquad
+C=2A.
+\]
+
+Therefore:
+
+\[
+C=4B.
+\]
+
+The validity depends on relations internal to the propositions.
+
+\begin{whiteboard}
+\[
+A=2B
+\]
+
+\[
+C=2A
+\]
+
+\[
+\therefore C=4B
+\]
+
+\[
+\boxed{\text{RELATIONAL STRUCTURE matters}}
+\]
+\end{whiteboard}
+
+% ------------------------------------------------------------
+
+\subsection*{2. The Copula}
+
+Consider:
+
+\[
+\text{A chimaera is imaginary.}
+\]
+
+The word ``is'' joins subject and predicate.
+
+It does not by itself assert that a chimaera exists as an ordinary
+object.
+
+\begin{whiteboard}
+\[
+\text{A chimaera IS imaginary}
+\]
+
+\[
+\hspace{0.4in}\uparrow
+\]
+
+\[
+\text{COPULA}
+\]
+
+\[
+\boxed{\text{``is'' does not automatically mean ``exists''}}
+\]
+\end{whiteboard}
+
+% ------------------------------------------------------------
+
+\subsection*{3. Negation and Quantification}
+
+Compare:
+
+\[
+\neg(\forall x(M(x)\rightarrow W(x)))
+\]
+
+with:
+
+\[
+\exists x(M(x)\land \neg W(x)).
+\]
+
+In modern logic they are equivalent under the standard
+interpretation of the quantifiers.
+
+But Abelard's historical problem concerns the existential
+assumptions built into older logical doctrine.
+
+\begin{whiteboard}
+\[
+\neg[\text{Every }S\text{ is }P]
+\]
+
+\[
+\text{vs.}
+\]
+
+\[
+\text{Some }S\text{ is not }P
+\]
+
+\[
+\boxed{\text{scope + existential assumptions must be examined}}
+\]
+\end{whiteboard}
+
+% ------------------------------------------------------------
+
+\subsection*{4. Modal Scope}
+
+Compare:
+
+\[
+\Diamond\neg\exists x(M(x)\land W(x))
+\]
+
+with:
+
+\[
+\forall x(M(x)\rightarrow \Diamond\neg W(x)).
+\]
+
+The position of the modal operator changes what is asserted.
+
+\begin{whiteboard}
+\[
+\text{POSSIBLE }[\text{No }S\text{ is }P]
+\]
+
+\[
+\neq
+\]
+
+\[
+\text{No }S\text{ is }[\text{POSSIBLY }P]
+\]
+
+\[
+\boxed{\text{modal scope changes meaning}}
+\]
+\end{whiteboard}
+
+% ------------------------------------------------------------
+
+\subsection*{5. Paradox of Implication}
+
+Suppose \(P\) is impossible.
+
+Then no case exists in which \(P\) is true and \(Q\) false.
+
+Does that establish:
+
+\[
+P\rightarrow Q
+\]
+
+for any \(Q\)?
+
+That question separates a truth-conditional conception of
+implication from Abelard's stronger demand for intrinsic
+connection.
+
+\begin{whiteboard}
+\[
+P = \text{impossible}
+\]
+
+\[
+\text{Does }P\rightarrow Q
+\]
+
+\[
+\text{hold for arbitrary }Q?
+\]
+
+\[
+\boxed{\text{truth condition vs. intrinsic connection}}
+\]
+\end{whiteboard}
+
+% ------------------------------------------------------------
+
+\subsection*{6. One Word, Three Suppositions}
+
+Use the same expression in three different contexts.
+
+\[
+\text{``man'' is a noun}
+\]
+
+\[
+\text{man is a species}
+\]
+
+\[
+\text{every man is mortal}
+\]
+
+The logical role of the expression changes.
+
+\begin{whiteboard}
+\[
+\text{``man''}
+\]
+
+\[
+\begin{array}{ll}
+1. & \text{linguistic sign}\\
+2. & \text{species / concept}\\
+3. & \text{individual men}
+\end{array}
+\]
+
+\[
+\boxed{\text{same expression --- different supposition}}
+\]
+\end{whiteboard}
+
+% ------------------------------------------------------------
+
+\subsection*{7. Formal Consequence by Substitution}
+
+Begin with:
+
+\[
+\text{Every }M\text{ is }L.
+\]
+
+\[
+\text{Every }S\text{ is }M.
+\]
+
+\[
+\therefore \text{Every }S\text{ is }L.
+\]
+
+Replace the terms repeatedly.
+
+The validity remains.
+
+\begin{whiteboard}
+\[
+\begin{array}{c}
+\text{Every }M\text{ is }L\\
+\text{Every }S\text{ is }M\\
+\hline
+\text{Every }S\text{ is }L
+\end{array}
+\]
+
+\[
+\boxed{\text{substitution preserves validity}}
+\]
+\end{whiteboard}
+
+% ------------------------------------------------------------
+
+\subsection*{8. A Small Medieval Rule Set}
+
+A compact group of rules displays how much propositional
+structure the medieval tradition had recovered.
+
+\begin{whiteboard}
+\[
+P\land Q \vdash P
+\]
+
+\[
+P \vdash P\lor Q
+\]
+
+\[
+P\rightarrow Q,\ P \vdash Q
+\]
+
+\[
+P\rightarrow Q,\ \neg Q \vdash \neg P
+\]
+
+\[
+\neg(P\land Q)
+\leftrightarrow
+(\neg P\lor\neg Q)
+\]
+
+\[
+\boxed{\text{substantial PRIMARY LOGIC has re-emerged}}
+\]
+\end{whiteboard}
+
+% ============================================================
+% FINAL SUMMARY
+% ============================================================
+
+\section{Final Summary}
+
+The Roman and medieval history of logic should not be described
+merely as a period of decline between Greek antiquity and the
+Renaissance.
+
+The Roman tradition preserves ancient logical material and makes
+it available in Latin.
+
+Boethius becomes the decisive bridge.
+
+The early medieval world inherits only part of ancient logic, but
+the twelfth century sees renewed confidence and original logical
+work.
+
+Abelard makes major advances in the analysis of propositions,
+propositional content, copulation, negation, modality,
+quantification, and consequence.
+
+The medieval universities transform logic into a large-scale
+academic discipline.
+
+Their interest in sophisms, \latin{insolubilia},
+\latin{syncategoremata}, and \latin{obligationes} makes difficult
+linguistic and inferential cases into subjects of sustained
+technical analysis.
+
+The theory of the \latin{proprietates terminorum} attempts to
+explain meaning, reference, and quantificational behavior.
+
+The theory of \latin{consequentiae} broadens the theory of valid
+inference and recovers a large part of what can be recognized as
+primary or propositional logic.
+
+Medieval thinkers do not yet create modern quantification theory.
+
+A major obstacle is the absence of a sufficiently powerful
+symbolic notation.
+
+Nevertheless, they identify many of the problems that modern logic
+will later solve in a more systematic symbolic language.
+
+\begin{whiteboard}
+\[
+\boxed{
+\begin{array}{c}
+\textbf{ROMAN LOGIC}\\
+\text{preserves and transmits}
+\end{array}
+}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\textbf{ABELARD}\\
+\text{turns recovery into innovation}
+\end{array}
+}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\textbf{MEDIEVAL UNIVERSITIES}\\
+\text{institutionalize logical analysis}
+\end{array}
+}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\textbf{\latin{PROPRIETATES TERMINORUM}}\\
+\text{semantics + quantification}
+\end{array}
+}
+\qquad
+\boxed{
+\begin{array}{c}
+\textbf{\latin{CONSEQUENTIAE}}\\
+\text{general inference}
+\end{array}
+}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\boxed{
+\begin{array}{c}
+\textbf{MEDIEVAL ACHIEVEMENT}\\[0.3em]
+\text{A substantial body of the PRIMARY LOGIC}\\
+\text{presupposed by syllogistic is articulated.}
+\end{array}
+}
+\]
+\end{whiteboard}
+
+% ============================================================
+% MASTER WHITEBOARD PACKET
+% ============================================================
+
+\section*{Master Whiteboard Packet}
+
+\begin{whiteboard}
+
+\textbf{1. Ancient inheritance}
+
+\[
+\text{Aristotle}
++
+\text{Chrysippus}
+\rightarrow
+\text{late ancient mixture}
+\rightarrow
+\text{Boethius}
+\]
+
+\textbf{2. Early medieval recovery}
+
+\[
+\text{\latin{ars vetus}}
+\rightarrow
+\text{trivium}
+\rightarrow
+\text{universals controversy}
+\]
+
+\textbf{3. Abelard}
+
+\[
+\text{proposition}
+\rightarrow
+\text{\latin{dictum}}
+\rightarrow
+\text{copula}
+\]
+
+\[
+\text{negation}
+\rightarrow
+\text{quantification}
+\rightarrow
+\text{modal scope}
+\]
+
+\[
+\text{consequence}
+\rightarrow
+\text{modus ponens / tollens / transitivity}
+\]
+
+\textbf{4. University logic}
+
+\[
+\text{\latin{ars nova}}
+\rightarrow
+\text{sophismata}
+\rightarrow
+\text{\latin{insolubilia}}
+\]
+
+\[
+\text{\latin{syncategoremata}}
+\rightarrow
+\text{\latin{obligationes}}
+\]
+
+\textbf{5. Term theory}
+
+\[
+\text{\latin{significatio}}
+\neq
+\text{\latin{suppositio}}
+\]
+
+\[
+\text{material}
+\qquad
+\text{simple}
+\qquad
+\text{personal}
+\]
+
+\[
+\text{distribution}
+\rightarrow
+\text{quantificational analysis}
+\]
+
+\textbf{6. Theory of consequences}
+
+\[
+\text{formal}
+\qquad
+\text{vs.}
+\qquad
+\text{material}
+\]
+
+\[
+\text{substitution}
+\rightarrow
+\text{formal validity}
+\]
+
+\[
+\neg,\ \land,\ \lor,\ \rightarrow
+\]
+
+\[
+\boxed{\text{PRIMARY / PROPOSITIONAL LOGIC}}
+\]
+
+\textbf{7. Historical limit}
+
+\[
+\text{strong logical analysis}
++
+\text{weak notation}
+\]
+
+\[
+\downarrow
+\]
+
+\[
+\text{difficulty developing full quantification theory}
+\]
+
+\textbf{8. Final historical trajectory}
+
+\[
+\boxed{
+\text{TRANSMISSION}
+\rightarrow
+\text{RECOVERY}
+\rightarrow
+\text{INNOVATION}
+}
+\]
+
+\end{whiteboard}
+
+\end{document}
